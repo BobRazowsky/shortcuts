@@ -5,7 +5,6 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		browserify: {
-
             main: {
                 files: {
                     "./release/js/<%= pkg.name %>.js": ["./js/index.js"]
@@ -26,9 +25,10 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
-					{expand: true, src: ['*.html'], dest: 'cbt_release/'},
-					{expand: true, src: ['img/*'], dest: 'cbt_release/'},
-					{expand: true, src: ['css/*.css'], dest: 'cbt_release/'}
+					{expand: true, src: ['*.html'], dest: 'release/'},
+					{expand: true, src: ['*.plist'], dest: 'release/'},
+					{expand: true, src: ['img/*'], dest: 'release/'},
+					{expand: true, src: ['css/*.css'], dest: 'release/'}
 				]
 			}
 		},
@@ -39,9 +39,7 @@ module.exports = function(grunt) {
 					path: ['css']
 				},
 				files: {
-					/*'cbt_release/css/popup.css':'less/popup.less',
-					'cbt_release/css/donate.css':'less/donate.less',
-					'cbt_release/css/options.css':'less/options.less'*/
+					'release/css/main.css':'less/main.less'
 				}
 			}
 		},
@@ -51,33 +49,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					src: 'js/*.js',
-					dest: 'cbt_release/'
-				},
-				{
-					expand: true,
-					src: 'vendors/*.js',
-					dest: 'cbt_release/'
-				}]
-			}
-		},
-
-		compress: {
-			main: {
-				options: {
-					archive: 'oldPackages/<%= pkg.short %><%= pkg.version %>.zip'
-				},
-				files: [
-					{src: ['cbt_release/**'], dest: '/'}
-				]
-			},
-			firefox: {
-				options: {
-					archive: 'oldPackages/<%= pkg.short %><%= pkg.version %>_firefox.zip'
-				},
-				files: [{
-					src: ['**/*'],
-					cwd: 'cbt_release/',
-					expand: true
+					dest: 'release/'
 				}]
 			}
 		}
@@ -88,10 +60,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('browserify');
+	grunt.loadNpmTasks('grunt-browserify');
 
 	grunt.registerTask('default', ['less']);
-	grunt.registerTask('build', ['copy','browserify', 'uglify', 'less']);
+	grunt.registerTask('build', ['copy','browserify', 'less']);
 	grunt.registerTask('pack', ['compress']);
-	grunt.registerTask('release', ['copy', 'uglify', 'less', 'compress']);
+	grunt.registerTask('release', ['copy','browserify', 'less']);
 };

@@ -9,14 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs": "0.0.1-security",
+    "express": "^4.16.3",
     "grunt": "^1.0.3",
     "grunt-contrib-compress": "^1.4.3",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-uglify": "^3.4.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "plist": "^3.0.1"
+    "grunt-contrib-watch": "^1.1.0"
   },
   "devDependencies": {
     "grunt-browserify": "^5.3.0"
