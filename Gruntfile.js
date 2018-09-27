@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 		browserify: {
             main: {
                 files: {
-                    "./release/js/<%= pkg.name %>.js": ["./js/index.js"]
+                    "app/release/js/<%= pkg.name %>.js": ["app/dev/js/index.js"]
                 }
             }
         },
@@ -25,10 +25,9 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
-					{expand: true, src: ['*.html'], dest: 'release/'},
-					{expand: true, src: ['*.plist'], dest: 'release/'},
-					{expand: true, src: ['img/*'], dest: 'release/'},
-					{expand: true, src: ['css/*.css'], dest: 'release/'}
+					{expand: true, src: ['*.html'], dest: 'app/release/'},
+					{expand: true, src: ['*.plist'], dest: 'app/release/'},
+					{expand: true, src: ['css/*.css'], dest: 'app/release/'}
 				]
 			}
 		},
@@ -39,7 +38,7 @@ module.exports = function(grunt) {
 					path: ['css']
 				},
 				files: {
-					'release/css/main.css':'less/main.less'
+					'app/release/css/main.css':'app/dev/less/main.less'
 				}
 			}
 		},
@@ -49,7 +48,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					src: 'js/*.js',
-					dest: 'release/'
+					dest: 'app/release/'
 				}]
 			}
 		}
