@@ -1,0 +1,24 @@
+{
+  "name": "shortcuts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "grunt": "^1.0.3",
+    "grunt-contrib-compress": "^1.4.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.4.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "plist": "^3.0.1"
+  },
+  "devDependencies": {
+    "grunt-browserify": "^5.3.0"
+  }
+}
