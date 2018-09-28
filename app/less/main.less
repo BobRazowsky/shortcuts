@@ -9,7 +9,7 @@
 	width: 360px;
 	min-height: 256px;
 	background-color: white;
-	border-radius: 20px;
+	border-radius: 15px;
 	margin-bottom: 10px;
 	margin-top: 10px;
 	margin-left: 10px;
@@ -17,16 +17,24 @@
 	.nodeTop {
 		background-color: #f2f4f6;
 		border: 1px solid transparent;
-		border-radius: 20px 20px 0 0;
+		border-radius: 15px 15px 0 0;
 		border-bottom: 1px solid #e2e2e2;
 		height: 50px;
 
 		.nodeTitle {
-			margin-left: 5px;
+			float: left;
+			margin-left: 10px;
+			font-family: sans-serif;
+		}
+
+		.icon {
+			margin-top: 8px;
+			margin-left: 8px;
+			float: left;
 		}
 
 		&.small {
-			border-radius: 20px 20px 20px 20px;
+			border-radius: 15px 15px 15px 15px;
 		}
 	}
 
@@ -35,7 +43,7 @@
 
 		.variable {
 			width: 40px;
-			height: 20px;
+			height: 15px;
 			border-radius: 10px;
 			background-color: gray;
 		}

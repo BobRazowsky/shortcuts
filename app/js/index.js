@@ -1506,17 +1506,6 @@ var shortcutXML = `<?xml version="1.0" encoding="UTF-8"?>
 		</dict>
 		<dict>
 			<key>WFWorkflowActionIdentifier</key>
-			<string>is.workflow.actions.useractivity.open</string>
-			<key>WFWorkflowActionParameters</key>
-			<dict>
-				<key>AppBundleIdentifier</key>
-				<string>com.apple.weather</string>
-				<key>UserActivityData</key>
-				<data>YnBsaXN0MDDUAQIDBAUGYWJYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCDk/RUZHS1BTWFlaXVUkbnVsbN8QGAkKCwwNDg8QERITFBUWFxgZGhscHR4fICEiIyMjJicnIyojIyMuLzAxIzMnIzYjJ1xyZXF1aXJlZEtleXNVdGl0bGVad2VicGFnZVVSTF8QE2R5bmFtaWNBY3Rpdml0eVR5cGVfEBRwZXJzaXN0ZW50SWRlbnRpZmllcldvcHRpb25zXxAZZWxpZ2libGVGb3JQdWJsaWNJbmRleGluZ18QFWVsaWdpYmxlRm9yUHJlZGljdGlvbl5leHBpcmF0aW9uRGF0ZVYkY2xhc3NccGF5bG9hZEVycm9yVHV1aWRYa2V5d29yZHNcYWN0aXZpdHlUeXBlXxASZWxpZ2libGVGb3JIYW5kb2ZmV3ZlcnNpb25fEBdjb250ZW50QXR0cmlidXRlU2V0RGF0YV50ZWFtSWRlbnRpZmllclR0eXBlXxAUZWxpZ2libGVGb3JSZW1pbmRlcnNbcmVmZXJyZXJVUkxXcGF5bG9hZF1jb250ZW50QWN0aW9uXxARZWxpZ2libGVGb3JTZWFyY2iACYAEgACAAIAAgAIICIAAgA2AAIAAgACABQkQAYAGgAAQAQiAAIAIgAAI0zo7Ejw9PldOUy5rZXlzWk5TLm9iamVjdHOgoIAD0kBBQkNaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiQkRYTlNPYmplY3RfEBRTaG93IHdlYXRoZXIgaW4gTHlvbl8QHmNvbS5hcHBsZS53ZWF0aGVyLnVzZXJhY3Rpdml0edJIEklKV05TLmRhdGFPEQG0YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKQHCA0OVSRudWxs0gkKCwxZY29udGFpbmVyViRjbGFzc4ACgANPEITeugABAACEAAAAAAAAAB0AAADwhAAAAAAAhAAAAGMAAAAEAFMAAAAlAAAAX19jbGFzczpDU1NlYXJjaGFibGVJdGVtQXR0cmlidXRlU2V0AAwAAAAAAAwAAAABAAAAAAAMAAAAAAAMAAAAAQAAAAAAJwAAAPQAAAAA4lAAAADxYAAAAPHSDxARElokY2xhc3NuYW1lWCRjbGFzc2VzXxAcQ1NTZWFyY2hhYmxlSXRlbUF0dHJpYnV0ZVNldKITFF8QHENTU2VhcmNoYWJsZUl0ZW1BdHRyaWJ1dGVTZXRYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABAAgAEQAaACMALQAyADcAPABCAEcAUQBYAFoAXADjAOgA8wD8ARsBHgE9AUYBWAFbAWAAAAAAAAACAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAABYoAH0kBBTE1dTlNNdXRhYmxlRGF0YaNOT0RdTlNNdXRhYmxlRGF0YVZOU0RhdGHSSBJRSk8QMU1QAwWCq2Rlc3RWaWV3S2V5rmNpdHlEZXRhaWxWaWV3q2NpdHlOYW1lS2V5pEx5b26AB9I7ElRXolVWgAqAC4AMW2Rlc3RWaWV3S2V5W2NpdHlOYW1lS2V50kBBW1xVTlNTZXSiW0TSQEFeX18QElVBVXNlckFjdGl2aXR5SW5mb6JgRF8QElVBVXNlckFjdGl2aXR5SW5mb18QD05TS2V5ZWRBcmNoaXZlctFjZFRyb290gAEACAARABoAIwAtADIANwBGAEwAfwCMAJIAnQCzAMoA0gDuAQYBFQEcASkBLgE3AUQBWQFhAXsBigGPAaYBsgG6AcgB3AHeAeAB4gHkAeYB6AHpAeoB7AHuAfAB8gH0AfYB9wH5AfsB/QH/AgACAgIEAgYCBwIOAhYCIQIiAiMCJQIqAjUCPgJLAk4CVwJuAo8ClAKcBFQEVgRbBGkEbQR7BIIEhwS7BL0EwgTFBMcEyQTLBNcE4wToBO4E8QT2BQsFDgUjBTUFOAU9AAAAAAAAAgEAAAAAAAAAZQAAAAAAAAAAAAAAAAAABT8=</data>
-			</dict>
-		</dict>
-		<dict>
-			<key>WFWorkflowActionIdentifier</key>
 			<string>is.workflow.actions.comment</string>
 			<key>WFWorkflowActionParameters</key>
 			<dict/>
@@ -2023,7 +2012,20 @@ init();
 
 function init() {
 	nodeDictionary = getDictionary();
+	//createMaxiDict(nodeDictionary);
 	parseXML(shortcutXML);
+}
+
+function createMaxiDict(dico) {
+	for(var entry in dico) {
+		var prettyName = dico[entry]
+		dico[entry] = {
+			"prettyName" : prettyName,
+			"iconName" : null
+		};
+	}
+	console.log(dico);
+	console.log(JSON.stringify(dico));
 }
 
 function parseXML(xml) {
@@ -2034,11 +2036,13 @@ function parseXML(xml) {
 	var object = organize(xmlDoc);
 
 	var actions = object.WFWorkflowActions;
+	console.log(actions);
 	var importQuestions = object.WFWorkflowImportQuestions;
 
 	for(var act in actions) {
-		//console.log('Action : ', actions[act]);
-		createNode(actions[act]);
+		if(actions.hasOwnProperty(act) && actions[act] !== 'undefined') {
+			createNode(actions[act]);
+		}
 	}
 }
 
@@ -2104,11 +2108,16 @@ function getChildren(node) {
 }
 
 function createNode(action) {
+	console.log('Action : ', action);
+	if(!action) {
+		return;
+	}
 	var container = document.getElementById('container');
 
 	var keys = Object.keys(action.WFWorkflowActionParameters);
 	var content = [];
 
+	// create content first
 	for(var i = 0; i < keys.length; i++) {
 		if(keys[i] !== 'UUID') {
 			if(keys[i] == "WFTextActionText") {
@@ -2141,6 +2150,8 @@ function createNode(action) {
 		}
 	}
 
+	var nodeUglyTitle = action.WFWorkflowActionIdentifier.replace("is.workflow.actions.", "");
+
 	var node = document.createElement('div');
 	node.classList.add('node');
 	container.appendChild(node);
@@ -2149,10 +2160,21 @@ function createNode(action) {
 	nodeTop.classList.add('nodeTop');
 	node.appendChild(nodeTop);
 
+	if(nodeDictionary[nodeUglyTitle].iconName) {
+		var nodeIcon = document.createElement('img');
+		nodeIcon.src = './images/' + nodeDictionary[nodeUglyTitle].iconName + '.png';
+		nodeIcon.alt = nodeUglyTitle;
+		nodeIcon.classList.add('icon');
+		nodeIcon.width = 32;
+		nodeIcon.height = 32;
+		nodeTop.appendChild(nodeIcon);
+	}
+
+
 	var nodeTitle = document.createElement('p');
 	nodeTitle.classList.add('nodeTitle');
-	var nodeUglyTitle = action.WFWorkflowActionIdentifier.replace("is.workflow.actions.", "");
-	var title = nodeDictionary[nodeUglyTitle];
+	console.log(nodeDictionary[nodeUglyTitle]);
+	var title = nodeDictionary[nodeUglyTitle].prettyName;
 	if(!title){
 		title = nodeUglyTitle;
 	}
