@@ -2031,6 +2031,8 @@ var nodeDictionnary = {
 	"detect.dictionary" : "Get Dictionary from Input"
 };
 
+var keyDict = {};
+
 parseXML(shortcutXML);
 
 function parseXML(xml) {
@@ -2041,11 +2043,23 @@ function parseXML(xml) {
 
   	var actions = object.WFWorkflowActions;
   	var importQuestions = object.WFWorkflowImportQuestions;
+  	var keyDict = createKeyDictionary(actions);
 
   	for(var act in actions) {
-  		console.log('Action : ', actions[act]);
+  		//console.log('Action : ', actions[act]);
+
   		createNode(actions[act]);
   	}
+}
+
+function createKeyDictionary(actions) {
+	for(var act in actions) {
+  		//console.log('Action : ', actions[act]);
+  		var nodeUglyTitle = actions[act].WFWorkflowActionIdentifier.replace("is.workflow.actions.", "");
+  		keyDict[nodeUglyTitle] = null;
+  	}
+
+  	console.log(JSON.stringify(keyDict));
 }
 
 function organize(xmlDoc) {
@@ -2107,7 +2121,6 @@ function createNode(action) {
 
 	var keys = Object.keys(action.WFWorkflowActionParameters);
 	var content = [];
-	console.log(keys);
 
 	for(var i = 0; i < keys.length; i++) {
 		if(keys[i] !== 'UUID') {
