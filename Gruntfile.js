@@ -4,17 +4,17 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
-		browserify: {
+		/*browserify: {
             main: {
                 files: {
                     "app/release/js/<%= pkg.name %>.js": ["app/dev/js/index.js"]
                 }
             }
-        },
+        },*/
 
 		watch: {
 			scripts: {
-				files: ['js/*.js', 'less/*.less', '*.html'],
+				files: ['app/js/*.js', 'app/js/*.json', 'app/less/*.less', 'app/*.html'],
 				tasks: ['build'],
 				options: {
 					spawn: false
@@ -25,9 +25,9 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
-					{expand: true, src: ['*.html'], dest: 'app/release/'},
-					{expand: true, src: ['*.plist'], dest: 'app/release/'},
-					{expand: true, src: ['css/*.css'], dest: 'app/release/'}
+					{expand: true, cwd: 'app/', src: ['*.html'], dest: 'build/release/'},
+					{expand: true, cwd: 'app/js/', src: ['*.js'], dest: 'build/release/js/'},
+					{expand: true, cwd: 'app/js/', src: ['*.json'], dest: 'build/release/js/'}
 				]
 			}
 		},
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 					path: ['css']
 				},
 				files: {
-					'app/release/css/main.css':'app/dev/less/main.less'
+					'build/release/css/main.css':'app/less/main.less'
 				}
 			}
 		},
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-browserify');
 
 	grunt.registerTask('default', ['less']);
-	grunt.registerTask('build', ['copy','browserify', 'less']);
+	grunt.registerTask('build', ['copy',/*'browserify',*/ 'less']);
 	grunt.registerTask('pack', ['compress']);
-	grunt.registerTask('release', ['copy','browserify', 'less']);
+	grunt.registerTask('release', ['copy',/*'browserify',*/ 'less']);
 };
