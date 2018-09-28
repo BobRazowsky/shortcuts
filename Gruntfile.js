@@ -4,15 +4,14 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
-		/*browserify: {
-            main: {
-                files: {
-                    "app/release/js/<%= pkg.name %>.js": ["app/dev/js/index.js"]
-                }
-            }
-        },*/
-
 		watch: {
+			dummy: {
+                files: ["__dummy__/*"],
+                tasks: ["build"],
+                options: {
+                    atBegin: true
+                }
+            },
 			scripts: {
 				files: ['app/js/*.js', 'app/js/*.json', 'app/less/*.less', 'app/*.html'],
 				tasks: ['build'],
@@ -59,10 +58,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-browserify');
 
 	grunt.registerTask('default', ['less']);
-	grunt.registerTask('build', ['copy',/*'browserify',*/ 'less']);
+	grunt.registerTask('build', ['copy', 'less']);
 	grunt.registerTask('pack', ['compress']);
-	grunt.registerTask('release', ['copy',/*'browserify',*/ 'less']);
+	grunt.registerTask('release', ['copy', 'less']);
 };
