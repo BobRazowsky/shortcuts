@@ -2,52 +2,97 @@
     "openapp":
     {
         "prettyName": "Open App",
-        "iconName": "openapp"
+        "iconName": "openapp",
+        "lines": [
+            {"type": "choice", "label": "App", "key": " ", "choices": ["Devices Installed Apps"]}
+        ]
     },
     "properties.appstore":
     {
         "prettyName": "Get Details of App Store App",
-        "iconName": "properties.appstore"
+        "iconName": "properties.appstore",
+        "lines": [
+            {"type": "choice", "label": "Get", "key": " ", "choices": ["Artist", "Price", "Currency Code", "Formatted Price", "Release Date", "Category", "Description", "Rating", "No. of Ratings", "Rating(This Version)", "No. of Ratings(This Version)", "Version", "Last Updated", "Release Notes", "Content Rating", "Minimum OS Version", "Is Universal", "Supports Game Center", "Supported Devices", "Supported Languages", "Screenshot URLs", "iPad Screenshot URLs", "Download Size", "Store ID", "Store URL", "Artwork", "Artwork URL", "Name"]}
+        ]
     },
     "searchappstore":
     {
         "prettyName": "Search App Store",
-        "iconName": "properties.appstore"
+        "iconName": "properties.appstore",
+        "lines": [
+            {"type": "input", "label": "Search", "key": " ", "default": " "},
+            {"type": "input", "label": "Search By", "key": " ", "default": "All"},
+            {"type": "choice", "label": "Results", "key": " ", "choices": ["iPhone", "iPad", "Mac"]},
+            {"type": "input", "label": "Country", "key": " ", "default": "France"},
+            {"type": "minusplus", "label": "25 Items", "key": " ", "default": " "}
+        ]
     },
     "addnewevent":
     {
         "prettyName": "Add New Event",
-        "iconName": "calendar"
+        "iconName": "calendar",
+        "lines": [
+            {"type": "input", "label": "Title", "key": " ", "default": " "},
+            {"type": "input", "label": "Location", "key": " ", "default": " "},
+            {"type": "input", "label": "Calendar", "key": " ", "default": " "},
+            {"type": "input", "label": "Date", "key": " ", "default": " "},
+            {"type": "choice", "label": "Alert", "key": " ", "choices": ["At time of event", "5 minutes before", "15 minutes before", "30 minutes before", "1 hour before", "2 hour before", "1 day before", "2 days before", "1 week before", "Custom"]}
+        ]
     },
     "filter.eventattendees":
     {
         "prettyName": "Filter Event Attendees",
-        "iconName": "calendar"
+        "iconName": "calendar",
+        "lines": [
+            {"type": "filter", "label": "Add Filter", "key": " "},
+            {"type": "input", "label": "Sort By", "key": " ", "default": "None"},
+            {"type": "switch", "label": "Limit", "key": " ", "default": false}
+        ]
     },
     "filter.calendarevents":
     {
         "prettyName": "Find Calendar Events Where",
-        "iconName": "calendar"
+        "iconName": "calendar",
+        "lines": [
+            {"type": "label", "label": "Start Date", "key": "is in the next 7 days"},
+            {"type": "filter", "label": "Add Filter", "key": " "},
+            {"type": "input", "label": "Sort By", "key": " ", "default": "none"},
+            {"type": "switch", "label": "Limit", "key": " ", "default": false}
+        ]
     },
     "properties.calendarevents":
     {
         "prettyName": "Get Details of Calendar Events",
-        "iconName": "calendar"
+        "iconName": "calendar",
+        "lines": [
+            {"type": "input", "label": "Get", "key": " ", "default": "Choose"}
+        ]
     },
     "properties.eventattendees":
     {
         "prettyName": "Get Details of Event Attendees",
-        "iconName": "calendar"
+        "iconName": "calendar",
+        "lines": [
+            {"type": "input", "label": "Get", "key": " ", "default": " "}
+        ]
     },
     "getupcomingevents":
     {
         "prettyName": "Get Upcoming Events",
-        "iconName": "calendar"
+        "iconName": "calendar",
+        "lines": [
+            {"type": "input", "label": "Calendar", "key": " ", "default": "All Calendars"},
+            {"type": "minusplus", "label": "Get 1 Event", "key": " "},
+            {"type": "input", "label": "Day", "key": " ", "default": "Any Day"}
+        ]
     },
     "removeevents":
     {
         "prettyName": "Remove Events",
-        "iconName": "calendar"
+        "iconName": "calendar",
+        "lines": [
+            {"type": "switch", "label": "Include Future Events", "key": " ", "default": false}
+        ]
     },
     "showincalendar":
     {
@@ -62,7 +107,11 @@
     "date":
     {
         "prettyName": "Date",
-        "iconName": "date"
+        "iconName": "date",
+        "lines": [
+            {"type": "choice", "label": "Use", "key": " ", "default": "Current Date", "choices": ["Current Date", "Specified Date"]},
+            {"type": "input", "label": "Date", "key": " ", "default": " ", "condition": "Current Date"}
+        ]
     },
     "format.date":
     {
@@ -832,7 +881,11 @@
     "dictatetext":
     {
         "prettyName": "Dictate Text",
-        "iconName": "dictate"
+        "iconName": "dictate",
+        "lines": [
+            {"type": "input", "label": "Language", "key": " ", "default": "English"},
+            {"type": "input", "label": "Stop Listening", "key": " ", "default": "After Pause"}
+        ]
     },
     "generatebarcode":
     {
@@ -867,12 +920,19 @@
     "gettext":
     {
         "prettyName": "Text",
-        "iconName": "text"
+        "iconName": "text",
+        "lines" : [
+            {"type": "text", "key": "WFTextActionText"}
+        ]
     },
     "text.translate":
     {
         "prettyName": "Translate Text with Microsoft",
-        "iconName": "language"
+        "iconName": "language",
+        "lines" : [
+            {"type": "input", "label": "From", "key": "WFSelectedFromLanguage", "default": "Detect Language"},
+            {"type": "input", "label": "To", "key": "WFSelectedLanguage", "default": "English"}
+        ]
     },
     "gethtmlfromrichtext":
     {
@@ -897,12 +957,18 @@
     "text.changecase":
     {
         "prettyName": "Change Case",
-        "iconName": "text"
+        "iconName": "text",
+        "lines" : [
+            {"type": "choice", "label": "Case", "key": "WFCaseType", "choices": ["UPPERCASE", "lowercase", "Capitalize Every Word", "Capitalize with Title Case", "Capitalize with sentence case.", "cApItAlIsE wItH aLtErNaTiNg CaSe"]}
+        ]
     },
     "text.combine":
     {
         "prettyName": "Combine Text",
-        "iconName": "text"
+        "iconName": "text",
+        "lines" : [
+            {"type": "choice", "label": "Separator", "key": "WFTextSeparator", "choices": ["New Lines", "Spaces", "Custom"]}
+        ]
     },
     "correctspelling":
     {
@@ -912,22 +978,39 @@
     "text.match.getgroup":
     {
         "prettyName": "Get Group from Matched Text",
-        "iconName": "text"
+        "iconName": "text",
+        "lines" : [
+            {"type": "choice", "label": "Get", "key": "WFGetGroupType", "choices": ["Group At Index", "All Groups"]},
+            {"type": "input", "label": "Group Index", "key": "WFGroupIndex", "default": "1", "condition": "Group At Index"}
+        ]
     },
     "text.match":
     {
         "prettyName": "Match Text",
-        "iconName": "text"
+        "iconName": "text",
+        "lines" : [
+            {"type": "input", "label": "Pattern", "key": "WFMatchTextPattern", "default": "[0-9a-zA-Z]"},
+            {"type": "switch", "label": "Case Sensitive", "key": "WFMatchTextCaseSensitive", "default": true}
+        ]
     },
     "text.replace":
     {
         "prettyName": "Replace Text",
-        "iconName": "text"
+        "iconName": "text",
+        "lines" : [
+            {"type" : "input", "label" : "Find Text", "key": "WFReplaceTextFind", "default": " "},
+            {"type" : "input", "label" : "Replace With", "key": "WFReplaceTextReplace", "default": " "},
+            {"type" : "switch", "label" : "Case Sensitive", "key": "WFReplaceTextCaseSensitive", "default" : true},
+            {"type" : "switch", "label" : "Regular Expression", "key": "WFReplaceTextRegularExpression", "default" : false}
+        ]
     },
     "text.split":
     {
         "prettyName": "Split Text",
-        "iconName": "text"
+        "iconName": "text",
+        "lines" : [
+            {"type": "choice", "label": "Separator", "key": "WFTextSeparator", "choices": ["New Lines", "Spaces", "Every Character", "Custom"]}
+        ]
     },
     "com.guidedways.2Do.add":
     {
@@ -1192,12 +1275,18 @@
     "comment":
     {
         "prettyName": "Comment",
-        "iconName": "text"
+        "iconName": "text",
+        "lines" : [
+            {"type" : "text", "key" : "WFCommentActionText"}
+        ]
     },
     "showresult":
     {
         "prettyName": "Show Result",
-        "iconName": "wheel"
+        "iconName": "wheel",
+        "lines" : [
+            {"type": "text", "key": "Text"}
+        ]
     },
     "count":
     {
@@ -1342,7 +1431,10 @@
     "getvalueforkey":
     {
         "prettyName": "Get Dictionary Value",
-        "iconName": "wheel"
+        "iconName": "wheel",
+        "lines" : [
+            {"type": "input", "label" : "Key", "key": "WFDictionaryKey"}
+        ]
     },
     "setvalueforkey":
     {
@@ -1407,7 +1499,12 @@
     "ask":
     {
         "prettyName": "Ask for Input",
-        "iconName": "wheel"
+        "iconName": "wheel",
+        "lines" : [
+            {"type" : "input", "label" : "Question", "key": "WFAskActionPrompt"},
+            {"type" : "input", "label" : "Default Answer", "key": "WFAskActionDefaultAnswer"},
+            {"type" : "input", "label" : "Input Type", "key": "WFInputType"}
+        ]
     },
     "playsound":
     {
@@ -1457,7 +1554,10 @@
     "setvariable":
     {
         "prettyName": "Set Variable",
-        "iconName": "variable"
+        "iconName": "variable",
+        "lines" : [
+            {"type" : "input", "label" : "variable", "key": "WFVariableName"}
+        ]
     },
     "openxcallbackurl":
     {
