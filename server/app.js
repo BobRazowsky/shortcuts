@@ -33,12 +33,12 @@ app.listen(port, function() {
 
 function convert(body, res) {
 
-	console.log(body);
+	//console.log(body);
 
-	// readBplist(body).then((data) => {
-	// 	console.log(data);
-	//  	res.send(data);
-	// });
+	readBplist(body).then((data) => {
+		console.log(data);
+	 	res.send('OK');
+	});
 
-	res.send('OK');
+	//res.send('OK');
 }
