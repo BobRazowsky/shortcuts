@@ -27,7 +27,7 @@ function getShortcut() {
 
 function getDictionary() {
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", "/dict.json", false ); // false for synchronous request
+	xmlHttp.open( "GET", "./js/dict.json", false ); // false for synchronous request
 	xmlHttp.send(null);
 	var response = JSON.parse(xmlHttp.responseText);
 	
