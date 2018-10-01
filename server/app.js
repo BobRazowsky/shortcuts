@@ -38,11 +38,11 @@ function convert(file, res) {
 		console.log(data);
 	 	
 
-	 	fs.writeFile(__dirname + '/tmp/shortcut.json', JSON.stringify(data), function (err) {
+	 	fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
 		  if (err) throw err;
 		  //res.download('shortcut.json');
 
-		  res.sendFile(__dirname + '/tmp/shortcut.json', {}, function (err) {
+		  res.sendFile(__dirname + '/shortcut.json', {}, function (err) {
 		    if (err) {
 		      console.log(err);
 		    } else {
