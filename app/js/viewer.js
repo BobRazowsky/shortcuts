@@ -6,7 +6,7 @@ function init() {
 
 	console.log('INIT');
 	var shortcut = getShortcut();
-	var dict = getDictionary();
+	var nodeDictionary = getDictionary();
 
 	var actions = shortcut.WFWorkflowActions;
 
