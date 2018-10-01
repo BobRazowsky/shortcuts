@@ -56,7 +56,7 @@ function convert(file, res) {
 		  //   }
 		  // });
 		  // 
-		  res.end()
+		  res.redirect('back');
 
 		  console.log('Saved!');
 		});
