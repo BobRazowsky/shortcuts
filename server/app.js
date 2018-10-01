@@ -51,7 +51,7 @@ function convert(file, res) {
 		console.log(data);
 	 	
 
-	 	fs.writeFile('shortcut.json', data, function (err) {
+	 	fs.writeFile('shortcut.json', JSON.stringify(data), function (err) {
 		  if (err) throw err;
 
 
