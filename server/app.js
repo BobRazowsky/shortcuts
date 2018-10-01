@@ -25,7 +25,8 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
  //    convert(buf, res);
  	console.log('BODY' + JSON.stringify(req.body));
  	console.log(req.file);
- 	res.send('ok');
+ 	convert(req.file);
+ 	//res.send('ok');
 	//res.send('done');
 });
 
@@ -33,23 +34,23 @@ app.listen(port, function() {
 	console.log('Listening app on port ' + port);
 });
 
-function convert(buf, res) {
+function convert(file) {
 
 	//console.log(body);
 	//var buf = Buffer.from(body);
 	//
-	fs.writeFile('shortcut.plist', buf, function (err) {
-	  if (err) throw err;
-	  console.log('Saved!');
-	});
-
-	res.download('shortcut.plist');
-
-	// readBplist('shortcut.plist').then((data) => {
-
-	// 	console.log(data);
-	//  	res.send('OK');
+	// fs.writeFile('shortcut.plist', buf, function (err) {
+	//   if (err) throw err;
+	//   console.log('Saved!');
 	// });
+
+	// res.download('shortcut.plist');
+
+	readBplist(file.path).then((data) => {
+
+		console.log(data);
+	 	res.send('YOLO');
+	});
 
 	//res.send('OK');
 }
