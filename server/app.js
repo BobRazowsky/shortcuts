@@ -17,13 +17,14 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
-app.post('/convert', upload, function(req, res) {
+app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 	//console.log('CONVERT : ', req.body);
 	// var body = req.body.name;
 	// var buf = new Buffer(body.toString('binary'),'binary');
 
  //    convert(buf, res);
  	console.log('BODY' + JSON.stringify(req.body));
+ 	console.log(req.file);
  	res.send('ok');
 	//res.send('done');
 });
