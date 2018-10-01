@@ -21,15 +21,22 @@ app.post('/convert', function(req, res) {
         body += chunk.toString(); // convert Buffer to string
     });
     req.on('end', () => {
-        console.log(body);
+        //console.log(body);
+
+        readBplist(body).then((data) => {
+			console.log(data);
+		  //res.send(data);
+		});
+		//res.send('done');
+
         res.end('ok');
     });
 
-	// readBplist('path/to/your.bplist').then((data) => {
-	// 	console.log(data);
-	//   //res.send(data);
-	// });
-	//res.send('done');
+	readBplist('path/to/your.bplist').then((data) => {
+		console.log(data);
+	  //res.send(data);
+	});
+	res.send('done');
 });
 
 app.listen(port, function() {
