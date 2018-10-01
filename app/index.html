@@ -6,7 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <body>
-	
+	<form method="post" action="/convert" enctype="multipart/form-data">
+	 <div>
+	   <label for="file">Choose file to upload</label>
+	   <input type="file" id="file" name="file">
+	 </div>
+	 <div>
+	   <button>Submit</button>
+	 </div>
+	</form>
 	<div id="container"></div>
 
 	<script src="./js/index.js"></script>
