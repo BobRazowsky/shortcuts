@@ -5,9 +5,9 @@ var app = express();
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res) {
-  res.send('test');
-});
+// app.get('/', function(req, res) {
+//   res.send('test');
+// });
 
 app.listen(port, function() {
 	console.log('Listening app on port ' + port);
