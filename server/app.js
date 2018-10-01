@@ -32,10 +32,6 @@ app.post('/convert', function(req, res) {
         res.end('ok');
     });
 
-	readBplist('path/to/your.bplist').then((data) => {
-		console.log(data);
-	  //res.send(data);
-	});
 	res.send('done');
 });
 
