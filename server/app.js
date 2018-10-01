@@ -18,19 +18,19 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/convert', upload.single('shortcut'), function(req, res, next) {
- 	console.log('BODY' + JSON.stringify(req.body));
- 	console.log(req.file);
- 	convert(req.file, res);
+	console.log('BODY' + JSON.stringify(req.body));
+	console.log(req.file);
+	convert(req.file, res);
 });
 
 app.get('/shortcut', function(req, res) {
 	res.sendFile(__dirname + '/shortcut.json', {}, function (err) {
-	    if (err) {
-	      console.log(err);
-	    } else {
-	      console.log('Retrieved shortcut');
-	    }
-	  });
+		if (err) {
+			console.log(err);
+		} else {
+			console.log('Retrieved shortcut');
+		}
+	});
 });
 
 app.listen(port, function() {
@@ -42,23 +42,15 @@ function convert(file, res) {
 	readBplist(file.path).then((data) => {
 
 		console.log(data);
-	 	
+		
 
-	 	fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
-		  if (err) throw err;
-		  //res.download('shortcut.json');
+		fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
+			if (err) throw err;
+			//res.download('shortcut.json');
 
-		  // res.sendFile(__dirname + '/shortcut.json', {}, function (err) {
-		  //   if (err) {
-		  //     console.log(err);
-		  //   } else {
-		  //     console.log('Retrieved shortcut');
-		  //   }
-		  // });
-		  // 
-		  res.redirect('back');
+			res.redirect('back');
 
-		  console.log('Saved!');
+			console.log('Saved!');
 		});
 
 	});

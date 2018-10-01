@@ -10,10 +10,11 @@ function init() {
 
 	var actions = shortcut.WFWorkflowActions;
 
-	for(var i = 0; i < actions.length; i++) {
-		createNode(actions[i]);
-	}
-	
+	setTimeout(() => {
+		for(var i = 0; i < actions.length; i++) {
+			createNode(actions[i]);
+		}
+	}, 500);
 }
 
 function getShortcut() {
