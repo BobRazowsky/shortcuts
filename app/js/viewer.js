@@ -20,14 +20,14 @@ function getShortcut() {
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.open( "GET", "/shortcut", false ); // false for synchronous request
 	xmlHttp.send(null);
-	var response = JSON.parse(xhttp.responseText);
+	var response = JSON.parse(xmlHttp.responseText);
 
 	return response
 }
 
 function getDictionary() {
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", "js/dict.json", false ); // false for synchronous request
+	xmlHttp.open( "GET", "/public/js/dict.json", false ); // false for synchronous request
 	xmlHttp.send(null);
 	var response = JSON.parse(xmlHttp.responseText);
 	
