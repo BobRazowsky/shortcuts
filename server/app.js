@@ -16,14 +16,10 @@ app.use(bodyParser.urlencoded({
 
 app.post('/convert', function(req, res) {
 	//console.log('CONVERT : ', req.body);
+	var body = req.body.name;
+	var buf = new Buffer(body.toString('binary'),'binary');
 
-	let body = '';
-    req.on('data', chunk => {
-        body += chunk.toString(); // convert Buffer to string
-    });
-    req.on('end', () => {
-        convert(body, res);
-    });
+    convert(buf, res);
 
 	//res.send('done');
 });
@@ -32,12 +28,12 @@ app.listen(port, function() {
 	console.log('Listening app on port ' + port);
 });
 
-function convert(body, res) {
+function convert(buf, res) {
 
-	console.log(body);
+	//console.log(body);
 	//var buf = Buffer.from(body);
 	//
-	fs.writeFile('shortcut.plist', body, function (err) {
+	fs.writeFile('shortcut.plist', buf, function (err) {
 	  if (err) throw err;
 	  console.log('Saved!');
 	});
