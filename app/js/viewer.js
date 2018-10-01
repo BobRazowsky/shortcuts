@@ -1,12 +1,13 @@
 var shortcut = null;
+var nodeDictionary = null;
 
 document.getElementById('preview').addEventListener('click', init);
 
 function init() {
 
 	console.log('INIT');
-	var shortcut = getShortcut();
-	var nodeDictionary = getDictionary();
+	shortcut = getShortcut();
+	nodeDictionary = getDictionary();
 
 	var actions = shortcut.WFWorkflowActions;
 
