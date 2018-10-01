@@ -34,7 +34,7 @@ app.listen(port, function() {
 
 function convert(body, res) {
 
-	//console.log(body);
+	console.log(body);
 	//var buf = Buffer.from(body);
 	//
 	fs.writeFile('shortcut.plist', body, function (err) {
