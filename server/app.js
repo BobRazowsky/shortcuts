@@ -55,6 +55,8 @@ function convert(file, res) {
 		  //     console.log('Retrieved shortcut');
 		  //   }
 		  // });
+		  // 
+		  res.end()
 
 		  console.log('Saved!');
 		});
