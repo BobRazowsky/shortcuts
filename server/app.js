@@ -1,6 +1,7 @@
 var express = require('express');
 var readBplist = require('read-bplist');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 var port = process.env.PORT || 3000;
 
@@ -34,8 +35,14 @@ app.listen(port, function() {
 function convert(body, res) {
 
 	//console.log(body);
+	//
+	fs.writeFile('shortcut.plist', body, function (err) {
+	  if (err) throw err;
+	  console.log('Saved!');
+	});
 
-	readBplist(body).then((data) => {
+	readBplist('shortcut.plist').then((data) => {
+
 		console.log(data);
 	 	res.send('OK');
 	});
