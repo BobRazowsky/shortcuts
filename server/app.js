@@ -25,7 +25,7 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
  //    convert(buf, res);
  	console.log('BODY' + JSON.stringify(req.body));
  	console.log(req.file);
- 	convert(req.file);
+ 	convert(req.file, res);
  	//res.send('ok');
 	//res.send('done');
 });
@@ -34,7 +34,7 @@ app.listen(port, function() {
 	console.log('Listening app on port ' + port);
 });
 
-function convert(file) {
+function convert(file, res) {
 
 	//console.log(body);
 	//var buf = Buffer.from(body);
@@ -49,7 +49,17 @@ function convert(file) {
 	readBplist(file.path).then((data) => {
 
 		console.log(data);
-	 	res.send('YOLO');
+	 	
+
+	 	fs.writeFile('shortcut.json', data, function (err) {
+		  if (err) throw err;
+		  console.log('Saved!');
+		});
+
+		res.download('shortcut.json');
+
+		res.send('YOLO');
+
 	});
 
 	//res.send('OK');
