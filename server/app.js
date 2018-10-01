@@ -24,7 +24,13 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 });
 
 app.get('/shortcut', function(req, res) {
-	
+	res.sendFile(__dirname + '/shortcut.json', {}, function (err) {
+	    if (err) {
+	      console.log(err);
+	    } else {
+	      console.log('Retrieved shortcut');
+	    }
+	  });
 });
 
 app.listen(port, function() {
@@ -42,13 +48,13 @@ function convert(file, res) {
 		  if (err) throw err;
 		  //res.download('shortcut.json');
 
-		  res.sendFile(__dirname + '/shortcut.json', {}, function (err) {
-		    if (err) {
-		      console.log(err);
-		    } else {
-		      console.log('Retrieved shortcut');
-		    }
-		  });
+		  // res.sendFile(__dirname + '/shortcut.json', {}, function (err) {
+		  //   if (err) {
+		  //     console.log(err);
+		  //   } else {
+		  //     console.log('Retrieved shortcut');
+		  //   }
+		  // });
 
 		  console.log('Saved!');
 		});
