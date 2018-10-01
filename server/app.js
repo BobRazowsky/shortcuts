@@ -6,7 +6,7 @@ var app = express();
 app.use(express.static(__dirname + '/build/release/'));
 
 app.get('/', function(req, res) {
-  res.send('test');
+  //res.send('test');
 });
 
 app.listen(port, function() {
