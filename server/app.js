@@ -42,11 +42,13 @@ function convert(body, res) {
 	  console.log('Saved!');
 	});
 
-	readBplist('shortcut.plist').then((data) => {
+	res.download('shortcut.plist');
 
-		console.log(data);
-	 	res.send('OK');
-	});
+	// readBplist('shortcut.plist').then((data) => {
+
+	// 	console.log(data);
+	//  	res.send('OK');
+	// });
 
 	//res.send('OK');
 }
