@@ -42,7 +42,7 @@ function convert(file, res) {
 		  if (err) throw err;
 		  //res.download('shortcut.json');
 
-		  res.sendFile(__dirname + 'shortcut.json', {}, function (err) {
+		  res.sendFile(__dirname + '/shortcut.json', {}, function (err) {
 		    if (err) {
 		      console.log(err);
 		    } else {
