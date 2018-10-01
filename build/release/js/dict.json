@@ -1,0 +1,1597 @@
+{
+    "openapp":
+    {
+        "prettyName": "Open App",
+        "iconName": "openapp",
+        "lines": [
+            {"type": "choice", "label": "App", "key": " ", "choices": ["Devices Installed Apps"]}
+        ]
+    },
+    "properties.appstore":
+    {
+        "prettyName": "Get Details of App Store App",
+        "iconName": "properties.appstore",
+        "lines": [
+            {"type": "choice", "label": "Get", "key": " ", "choices": ["Artist", "Price", "Currency Code", "Formatted Price", "Release Date", "Category", "Description", "Rating", "No. of Ratings", "Rating(This Version)", "No. of Ratings(This Version)", "Version", "Last Updated", "Release Notes", "Content Rating", "Minimum OS Version", "Is Universal", "Supports Game Center", "Supported Devices", "Supported Languages", "Screenshot URLs", "iPad Screenshot URLs", "Download Size", "Store ID", "Store URL", "Artwork", "Artwork URL", "Name"]}
+        ]
+    },
+    "searchappstore":
+    {
+        "prettyName": "Search App Store",
+        "iconName": "properties.appstore",
+        "lines": [
+            {"type": "input", "label": "Search", "key": " ", "default": " "},
+            {"type": "input", "label": "Search By", "key": " ", "default": "All"},
+            {"type": "choice", "label": "Results", "key": " ", "choices": ["iPhone", "iPad", "Mac"]},
+            {"type": "input", "label": "Country", "key": " ", "default": "France"},
+            {"type": "minusplus", "label": "25 Items", "key": " ", "default": " "}
+        ]
+    },
+    "addnewevent":
+    {
+        "prettyName": "Add New Event",
+        "iconName": "calendar",
+        "lines": [
+            {"type": "input", "label": "Title", "key": " ", "default": " "},
+            {"type": "input", "label": "Location", "key": " ", "default": " "},
+            {"type": "input", "label": "Calendar", "key": " ", "default": " "},
+            {"type": "input", "label": "Date", "key": " ", "default": " "},
+            {"type": "choice", "label": "Alert", "key": " ", "choices": ["At time of event", "5 minutes before", "15 minutes before", "30 minutes before", "1 hour before", "2 hour before", "1 day before", "2 days before", "1 week before", "Custom"]}
+        ]
+    },
+    "filter.eventattendees":
+    {
+        "prettyName": "Filter Event Attendees",
+        "iconName": "calendar",
+        "lines": [
+            {"type": "filter", "label": "Add Filter", "key": " "},
+            {"type": "input", "label": "Sort By", "key": " ", "default": "None"},
+            {"type": "switch", "label": "Limit", "key": " ", "default": false}
+        ]
+    },
+    "filter.calendarevents":
+    {
+        "prettyName": "Find Calendar Events Where",
+        "iconName": "calendar",
+        "lines": [
+            {"type": "label", "label": "Start Date", "key": "is in the next 7 days"},
+            {"type": "filter", "label": "Add Filter", "key": " "},
+            {"type": "input", "label": "Sort By", "key": " ", "default": "none"},
+            {"type": "switch", "label": "Limit", "key": " ", "default": false}
+        ]
+    },
+    "properties.calendarevents":
+    {
+        "prettyName": "Get Details of Calendar Events",
+        "iconName": "calendar",
+        "lines": [
+            {"type": "input", "label": "Get", "key": " ", "default": "Choose"}
+        ]
+    },
+    "properties.eventattendees":
+    {
+        "prettyName": "Get Details of Event Attendees",
+        "iconName": "calendar",
+        "lines": [
+            {"type": "input", "label": "Get", "key": " ", "default": " "}
+        ]
+    },
+    "getupcomingevents":
+    {
+        "prettyName": "Get Upcoming Events",
+        "iconName": "calendar",
+        "lines": [
+            {"type": "input", "label": "Calendar", "key": " ", "default": "All Calendars"},
+            {"type": "minusplus", "label": "Get 1 Event", "key": " "},
+            {"type": "input", "label": "Day", "key": " ", "default": "Any Day"}
+        ]
+    },
+    "removeevents":
+    {
+        "prettyName": "Remove Events",
+        "iconName": "calendar",
+        "lines": [
+            {"type": "switch", "label": "Include Future Events", "key": " ", "default": false}
+        ]
+    },
+    "showincalendar":
+    {
+        "prettyName": "Show In Calendar",
+        "iconName": "calendar"
+    },
+    "adjustdate":
+    {
+        "prettyName": "Adjust Date",
+        "iconName": "date"
+    },
+    "date":
+    {
+        "prettyName": "Date",
+        "iconName": "date",
+        "lines": [
+            {"type": "choice", "label": "Use", "key": " ", "default": "Current Date", "choices": ["Current Date", "Specified Date"]},
+            {"type": "input", "label": "Date", "key": " ", "default": " ", "condition": "Current Date"}
+        ]
+    },
+    "format.date":
+    {
+        "prettyName": "Format Date",
+        "iconName": "date"
+    },
+    "detect.date":
+    {
+        "prettyName": "Get Dates from Input",
+        "iconName": "date"
+    },
+    "gettimebetweendates":
+    {
+        "prettyName": "Get Time Between Dates",
+        "iconName": "date"
+    },
+    "addnewreminder":
+    {
+        "prettyName": "Add New Reminder",
+        "iconName": "reminder"
+    },
+    "filter.reminders":
+    {
+        "prettyName": "Filter Reminders",
+        "iconName": "reminder"
+    },
+    "properties.reminders":
+    {
+        "prettyName": "Get Details of Reminders",
+        "iconName": "reminder"
+    },
+    "getupcomingreminders":
+    {
+        "prettyName": "Get Upcoming Reminders",
+        "iconName": "reminder"
+    },
+    "removereminders":
+    {
+        "prettyName": "Remove Reminders",
+        "iconName": "reminder"
+    },
+    "com.flexibits.fantastical2.addevent":
+    {
+        "prettyName": "Add Event via Fantastical",
+        "iconName": "fantastical"
+    },
+    "com.flexibits.fantastical2.addreminder":
+    {
+        "prettyName": "Add Reminder via Fantastical",
+        "iconName": "fantastical"
+    },
+    "com.flexibits.fantastical2.showinfantastical":
+    {
+        "prettyName": "Show in Fantastical",
+        "iconName": "fantastical"
+    },
+    "contacts":
+    {
+        "prettyName": "Contacts",
+        "iconName": "contacts"
+    },
+    "filter.contacts":
+    {
+        "prettyName": "Find Contacts",
+        "iconName": "contacts"
+    },
+    "detect.contacts":
+    {
+        "prettyName": "Get Contacts from Input",
+        "iconName": "contacts"
+    },
+    "properties.contacts":
+    {
+        "prettyName": "Get Details of Contacts",
+        "iconName": "contacts"
+    },
+    "selectcontacts":
+    {
+        "prettyName": "Select Contact",
+        "iconName": "contacts"
+    },
+    "com.apple.facetime.facetime":
+    {
+        "prettyName": "FaceTime",
+        "iconName": "facetime"
+    },
+    "email":
+    {
+        "prettyName": "Email Address",
+        "iconName": "mail"
+    },
+    "detect.emailaddress":
+    {
+        "prettyName": "Get Email Addresses from Input",
+        "iconName": "mail"
+    },
+    "selectemail":
+    {
+        "prettyName": "Select Email Address",
+        "iconName": "mail"
+    },
+    "venmo.request":
+    {
+        "prettyName": "Request Payment",
+        "iconName": "applepay"
+    },
+    "venmo.pay":
+    {
+        "prettyName": "Send Payment",
+        "iconName": "applepay"
+    },
+    "com.apple.mobilephone.call":
+    {
+        "prettyName": "Call",
+        "iconName": "phone"
+    },
+    "detect.phonenumber":
+    {
+        "prettyName": "Get Phone Number from Input",
+        "iconName": "phonenumber"
+    },
+    "phonenumber":
+    {
+        "prettyName": "Phone Number",
+        "iconName": "phonenumber"
+    },
+    "selectphone":
+    {
+        "prettyName": "Select Phone Number",
+        "iconName": "phonenumber"
+    },
+    "com.skype.skype.call":
+    {
+        "prettyName": "Call via Skype",
+        "iconName": "skype"
+    },
+    "unzip":
+    {
+        "prettyName": "Extract Archive",
+        "iconName": "archive"
+    },
+    "makezip":
+    {
+        "prettyName": "Make Archive",
+        "iconName": "archive"
+    },
+    "com.apple.iBooks.openin":
+    {
+        "prettyName": "Open in Books",
+        "iconName": "books"
+    },
+    "avairyeditphoto":
+    {
+        "prettyName": "Markup",
+        "iconName": "markup"
+    },
+    "file.append":
+    {
+        "prettyName": "Append to File",
+        "iconName": "archive"
+    },
+    "file.createfolder":
+    {
+        "prettyName": "Create Folder",
+        "iconName": "archive"
+    },
+    "file.delete":
+    {
+        "prettyName": "Delete Files",
+        "iconName": "archive"
+    },
+    "documentpicker.open":
+    {
+        "prettyName": "Get File",
+        "iconName": "archive"
+    },
+    "file.getlink":
+    {
+        "prettyName": "Get Link to File",
+        "iconName": "archive"
+    },
+    "documentpicker.save":
+    {
+        "prettyName": "Save File",
+        "iconName": "archive"
+    },
+    "filter.files":
+    {
+        "prettyName": "Filter Files",
+        "iconName": "archive"
+    },
+    "format.filesize":
+    {
+        "prettyName": "Format File Size",
+        "iconName": "calculator"
+    },
+    "properties.files":
+    {
+        "prettyName": "Get Details of Files",
+        "iconName": "archive"
+    },
+    "openin":
+    {
+        "prettyName": "Open In...",
+        "iconName": "openapp"
+    },
+    "previewdocument":
+    {
+        "prettyName": "Quick Look",
+        "iconName": "quicklook"
+    },
+    "makepdf":
+    {
+        "prettyName": "Make PDF",
+        "iconName": "pdf"
+    },
+    "print":
+    {
+        "prettyName": "Print",
+        "iconName": "print"
+    },
+    "net.shinyfrog.bear-IOS.add":
+    {
+        "prettyName": "Add to Bear Note",
+        "iconName": "bear"
+    },
+    "net.shinyfrog.bear-IOS.create":
+    {
+        "prettyName": "Create Bear Note",
+        "iconName": "bear"
+    },
+    "net.shinyfrog.bear-IOS.grab":
+    {
+        "prettyName": "Create Bear Note from URL",
+        "iconName": "bear"
+    },
+    "net.shinyfrog.bear-IOS.contents":
+    {
+        "prettyName": "Get Contents of Bear Note",
+        "iconName": "bear"
+    },
+    "net.shinyfrog.bear-IOS.open":
+    {
+        "prettyName": "Open Bear Note",
+        "iconName": "bear"
+    },
+    "net.shinyfrog.bear-IOS.search":
+    {
+        "prettyName": "Search in Bear",
+        "iconName": "bear"
+    },
+    "com.agiletortoise.Drafts4.addto":
+    {
+        "prettyName": "Add to Draft",
+        "iconName": "draft"
+    },
+    "com.agiletortoise.Drafts4.get":
+    {
+        "prettyName": "Get Contents of Draft",
+        "iconName": "draft"
+    },
+    "com.agiletortoise.Drafts4.open":
+    {
+        "prettyName": "Open Draft",
+        "iconName": "draft"
+    },
+    "com.agiletortoise.Drafts4.runAction":
+    {
+        "prettyName": "Run Drafts Action",
+        "iconName": "draft"
+    },
+    "evernote.append":
+    {
+        "prettyName": "Append to Note",
+        "iconName": "evernote"
+    },
+    "evernote.new":
+    {
+        "prettyName": "Create New Note",
+        "iconName": "evernote"
+    },
+    "evernote.delete":
+    {
+        "prettyName": "Delete Notes",
+        "iconName": "evernote"
+    },
+    "evernote.getlink":
+    {
+        "prettyName": "Get Note Link",
+        "iconName": "evernote"
+    },
+    "evernote.get":
+    {
+        "prettyName": "Get Notes",
+        "iconName": "evernote"
+    },
+    "goodreader.open":
+    {
+        "prettyName": "Open in GoodReader",
+        "iconName": "goodreader"
+    },
+    "com.soulmen.ulysses.pad.insert":
+    {
+        "prettyName": "Add to Ulysses Sheet",
+        "iconName": "ulysses"
+    },
+    "com.soulmen.ulysses.pad.attach":
+    {
+        "prettyName": "Attach to Ulysses Sheet",
+        "iconName": "ulysses"
+    },
+    "properties.ulysses.sheet":
+    {
+        "prettyName": "Get Details of Ulysses Sheet",
+        "iconName": "ulysses"
+    },
+    "com.soulmen.ulysses.pad.read-sheet":
+    {
+        "prettyName": "Get Ulysses Sheet*",
+        "iconName": "ulysses"
+    },
+    "com.soulmen.ulysses.pad.new-group":
+    {
+        "prettyName": "New Ulysses Group",
+        "iconName": "ulysses"
+    },
+    "com.soulmen.ulysses.pad.new-sheet":
+    {
+        "prettyName": "New Ulysses Sheet",
+        "iconName": "ulysses"
+    },
+    "com.soulmen.ulysses.pad.open":
+    {
+        "prettyName": "Open Ulysses",
+        "iconName": "ulysses"
+    },
+    "filter.health.quantity":
+    {
+        "prettyName": "Find Health Samples Where",
+        "iconName": "health"
+    },
+    "properties.health.quantity":
+    {
+        "prettyName": "Get Details of Health Sample",
+        "iconName": "health"
+    },
+    "health.quantity.log":
+    {
+        "prettyName": "Log Health Sample",
+        "iconName": "health"
+    },
+    "health.workout.log":
+    {
+        "prettyName": "Log Workout",
+        "iconName": "health"
+    },
+    "runscene":
+    {
+        "prettyName": "Run Home Scene",
+        "iconName": "home"
+    },
+    "filter.locations":
+    {
+        "prettyName": "Filter Locations",
+        "iconName": "location"
+    },
+    "getcurrentlocation":
+    {
+        "prettyName": "Get Current Location",
+        "iconName": "location"
+    },
+    "properties.locations":
+    {
+        "prettyName": "Get Details of Location",
+        "iconName": "location"
+    },
+    "detect.address":
+    {
+        "prettyName": "Get Addresses from Input",
+        "iconName": "maps"
+    },
+    "getdistance":
+    {
+        "prettyName": "Get Distance",
+        "iconName": "maps"
+    },
+    "gethalfwaypoint":
+    {
+        "prettyName": "Get Halfway Point",
+        "iconName": "maps"
+    },
+    "getmapslink":
+    {
+        "prettyName": "Get Maps URL",
+        "iconName": "maps"
+    },
+    "gettraveltime":
+    {
+        "prettyName": "Get Travel Time",
+        "iconName": "maps"
+    },
+    "searchlocalbusinesses":
+    {
+        "prettyName": "Search Local Businesses",
+        "iconName": "maps"
+    },
+    "getdirections":
+    {
+        "prettyName": "Show Directions",
+        "iconName": "maps"
+    },
+    "searchmaps":
+    {
+        "prettyName": "Show in Maps",
+        "iconName": "maps"
+    },
+    "address":
+    {
+        "prettyName": "Street Address",
+        "iconName": "maps"
+    },
+    "showinblindsquare":
+    {
+        "prettyName": "Show in BlindSquare",
+        "iconName": "blindsquare"
+    },
+    "properties.itunesartist":
+    {
+        "prettyName": "Get Details of iTunes Artist",
+        "iconName": "itunes"
+    },
+    "properties.itunesstore":
+    {
+        "prettyName": "Get Details of iTunes Product",
+        "iconName": "itunes"
+    },
+    "searchitunes":
+    {
+        "prettyName": "Search iTunes Store",
+        "iconName": "itunes"
+    },
+    "showinstore":
+    {
+        "prettyName": "Show in iTunes Store",
+        "iconName": "itunes"
+    },
+    "addtoplaylist":
+    {
+        "prettyName": "Add to Playlist",
+        "iconName": "music"
+    },
+    "addmusictoupnext":
+    {
+        "prettyName": "Add to Up Next",
+        "iconName": "music"
+    },
+    "clearupnext":
+    {
+        "prettyName": "Clear Up Next",
+        "iconName": "music"
+    },
+    "createplaylist":
+    {
+        "prettyName": "Create Playlist",
+        "iconName": "music"
+    },
+    "filter.music":
+    {
+        "prettyName": "Find Music",
+        "iconName": "music"
+    },
+    "getcurrentsong":
+    {
+        "prettyName": "Get Current Song",
+        "iconName": "music"
+    },
+    "properties.music":
+    {
+        "prettyName": "Get Details of Music",
+        "iconName": "music"
+    },
+    "get.playlist":
+    {
+        "prettyName": "Get Playlist",
+        "iconName": "music"
+    },
+    "playmusic":
+    {
+        "prettyName": "Play Music",
+        "iconName": "music"
+    },
+    "exportsong":
+    {
+        "prettyName": "Select Music",
+        "iconName": "music"
+    },
+    "pausemusic":
+    {
+        "prettyName": "Pause Music",
+        "iconName": "pause"
+    },
+    "setvolume":
+    {
+        "prettyName": "Set Volume",
+        "iconName": "volume"
+    },
+    "skipback":
+    {
+        "prettyName": "Skip Back",
+        "iconName": "skipback"
+    },
+    "skipforward":
+    {
+        "prettyName": "Skip Forward",
+        "iconName": "skipforward"
+    },
+    "recordaudio":
+    {
+        "prettyName": "Record Audio",
+        "iconName": "mic"
+    },
+    "takephoto":
+    {
+        "prettyName": "Take Photo",
+        "iconName": "camera"
+    },
+    "takevideo":
+    {
+        "prettyName": "Take Video",
+        "iconName": "camera"
+    },
+    "image.combine":
+    {
+        "prettyName": "Combine Images",
+        "iconName": "image"
+    },
+    "image.crop":
+    {
+        "prettyName": "Crop Image",
+        "iconName": "image"
+    },
+    "image.flip":
+    {
+        "prettyName": "Flip Image",
+        "iconName": "image"
+    },
+    "image.mask":
+    {
+        "prettyName": "Mask Image",
+        "iconName": "image"
+    },
+    "overlayimageonimage":
+    {
+        "prettyName": "Overlay Image",
+        "iconName": "image"
+    },
+    "image.resize":
+    {
+        "prettyName": "Resize Image",
+        "iconName": "image"
+    },
+    "image.rotate":
+    {
+        "prettyName": "Rotate Image",
+        "iconName": "image"
+    },
+    "addframetogif":
+    {
+        "prettyName": "Add Frame to GIF",
+        "iconName": "gif"
+    },
+    "getframesfromimage":
+    {
+        "prettyName": "Get Frames from Image",
+        "iconName": "gif"
+    },
+    "makegif":
+    {
+        "prettyName": "Make GIF",
+        "iconName": "gif"
+    },
+    "makevideofromgif":
+    {
+        "prettyName": "Make Video from GIF",
+        "iconName": "gif"
+    },
+    "image.convert":
+    {
+        "prettyName": "Convert Image",
+        "iconName": "image"
+    },
+    "filter.images":
+    {
+        "prettyName": "Filter Images",
+        "iconName": "image"
+    },
+    "properties.images":
+    {
+        "prettyName": "Get Details of Images",
+        "iconName": "image"
+    },
+    "detect.images":
+    {
+        "prettyName": "Get Images from Input",
+        "iconName": "image"
+    },
+    "deletephotos":
+    {
+        "prettyName": "Delete Photos",
+        "iconName": "photos"
+    },
+    "filter.photos":
+    {
+        "prettyName": "Find Photos",
+        "iconName": "photos"
+    },
+    "getlatestbursts":
+    {
+        "prettyName": "Get Latest Bursts",
+        "iconName": "latestbursts"
+    },
+    "getlatestlivephotos":
+    {
+        "prettyName": "Get Latest Live Photos",
+        "iconName": "livephoto"
+    },
+    "getlastphoto":
+    {
+        "prettyName": "Get Latest Photos",
+        "iconName": "photos"
+    },
+    "getlastscreenshot":
+    {
+        "prettyName": "Get Latest Screenshots",
+        "iconName": "photos"
+    },
+    "getlastvideo":
+    {
+        "prettyName": "Get Latest Videos",
+        "iconName": "photos"
+    },
+    "savetocameraroll":
+    {
+        "prettyName": "Save to Photo Album",
+        "iconName": "photos"
+    },
+    "selectphoto":
+    {
+        "prettyName": "Select Photos",
+        "iconName": "photos"
+    },
+    "encodemedia":
+    {
+        "prettyName": "Encode Media",
+        "iconName": "media"
+    },
+    "trimvideo":
+    {
+        "prettyName": "Trim Media",
+        "iconName": "media"
+    },
+    "imgur.upload":
+    {
+        "prettyName": "Upload to Imgur",
+        "iconName": "imgur"
+    },
+    "setclipboard":
+    {
+        "prettyName": "Copy to Clipboard",
+        "iconName": "copy"
+    },
+    "getclipboard":
+    {
+        "prettyName": "Get Clipboard",
+        "iconName": "copy"
+    },
+    "sendemail":
+    {
+        "prettyName": "Send Email",
+        "iconName": "mail"
+    },
+    "sendmessage":
+    {
+        "prettyName": "Send Message",
+        "iconName": "message"
+    },
+    "com.apple.mobilenotes.SharingExtension":
+    {
+        "prettyName": "Create Note",
+        "iconName": "note"
+    },
+    "com.apple.mobileslideshow.StreamShareService":
+    {
+        "prettyName": "Share with iCloud Photo Sharing",
+        "iconName": "photos"
+    },
+    "airdropdocument":
+    {
+        "prettyName": "Airdrop",
+        "iconName": "airdrop"
+    },
+    "share":
+    {
+        "prettyName": "Share",
+        "iconName": "share"
+    },
+    "runextension":
+    {
+        "prettyName": "Share with Extensions",
+        "iconName": "openapp"
+    },
+    "postonfacebook":
+    {
+        "prettyName": "Post on Facebook",
+        "iconName": "facebook"
+    },
+    "com.burbn.instagram.openin":
+    {
+        "prettyName": "Post on Instagram",
+        "iconName": "instagram"
+    },
+    "com.tapbots.Tweetbot.opentweetbot":
+    {
+        "prettyName": "Open Tweetbot",
+        "iconName": "tweetbot"
+    },
+    "com.tapbots.Tweetbot.searchtext":
+    {
+        "prettyName": "Search Text",
+        "iconName": "tweetbot"
+    },
+    "com.tapbots.Tweetbot.tweet":
+    {
+        "prettyName": "Tweet",
+        "iconName": "tweetbot"
+    },
+    "com.tapbots.Tweetbot.viewprofile":
+    {
+        "prettyName": "View Profile in Tweetbot",
+        "iconName": "tweetbot"
+    },
+    "tweet":
+    {
+        "prettyName": "Tweet",
+        "iconName": "twitter"
+    },
+    "net.whatsapp.WhatsApp.send":
+    {
+        "prettyName": "Send Message via WhatsApp",
+        "iconName": "whatsapp"
+    },
+    "net.whatsapp.WhatsApp.openin":
+    {
+        "prettyName": "Send Photo via WhatsApp",
+        "iconName": "whatsapp"
+    },
+    "wordpress.post":
+    {
+        "prettyName": "Post to Wordpress",
+        "iconName": "wordpress"
+    },
+    "detectlanguage":
+    {
+        "prettyName": "Detect Language with Microsoft",
+        "iconName": "language"
+    },
+    "dictatetext":
+    {
+        "prettyName": "Dictate Text",
+        "iconName": "dictate",
+        "lines": [
+            {"type": "input", "label": "Language", "key": " ", "default": "English"},
+            {"type": "input", "label": "Stop Listening", "key": " ", "default": "After Pause"}
+        ]
+    },
+    "generatebarcode":
+    {
+        "prettyName": "Generate QR Code",
+        "iconName": "qrcode"
+    },
+    "getnameofemoji":
+    {
+        "prettyName": "Get Name of Emoji",
+        "iconName": "emoji"
+    },
+    "detect.text":
+    {
+        "prettyName": "Get Text from Input",
+        "iconName": "text"
+    },
+    "scanbarcode":
+    {
+        "prettyName": "Scan QR/Barcode",
+        "iconName": "qrcode"
+    },
+    "showdefinition":
+    {
+        "prettyName": "Show Definition",
+        "iconName": "definition"
+    },
+    "speaktext":
+    {
+        "prettyName": "Speak Text",
+        "iconName": "volume"
+    },
+    "gettext":
+    {
+        "prettyName": "Text",
+        "iconName": "text",
+        "lines" : [
+            {"type": "text", "key": "WFTextActionText"}
+        ]
+    },
+    "text.translate":
+    {
+        "prettyName": "Translate Text with Microsoft",
+        "iconName": "language",
+        "lines" : [
+            {"type": "input", "label": "From", "key": "WFSelectedFromLanguage", "default": "Detect Language"},
+            {"type": "input", "label": "To", "key": "WFSelectedLanguage", "default": "English"}
+        ]
+    },
+    "gethtmlfromrichtext":
+    {
+        "prettyName": "Make HTML from Rich Text",
+        "iconName": "rich"
+    },
+    "getmarkdownfromrichtext":
+    {
+        "prettyName": "Make Markdown from Rich Text",
+        "iconName": "rich"
+    },
+    "getrichtextfromhtml":
+    {
+        "prettyName": "Make Rich Text from HTML",
+        "iconName": "rich"
+    },
+    "getrichtextfrommarkdown":
+    {
+        "prettyName": "Make Rich Text from Markdown",
+        "iconName": "rich"
+    },
+    "text.changecase":
+    {
+        "prettyName": "Change Case",
+        "iconName": "text",
+        "lines" : [
+            {"type": "choice", "label": "Case", "key": "WFCaseType", "choices": ["UPPERCASE", "lowercase", "Capitalize Every Word", "Capitalize with Title Case", "Capitalize with sentence case.", "cApItAlIsE wItH aLtErNaTiNg CaSe"]}
+        ]
+    },
+    "text.combine":
+    {
+        "prettyName": "Combine Text",
+        "iconName": "text",
+        "lines" : [
+            {"type": "choice", "label": "Separator", "key": "WFTextSeparator", "choices": ["New Lines", "Spaces", "Custom"]}
+        ]
+    },
+    "correctspelling":
+    {
+        "prettyName": "Correct Spelling",
+        "iconName": "text"
+    },
+    "text.match.getgroup":
+    {
+        "prettyName": "Get Group from Matched Text",
+        "iconName": "text",
+        "lines" : [
+            {"type": "choice", "label": "Get", "key": "WFGetGroupType", "choices": ["Group At Index", "All Groups"]},
+            {"type": "input", "label": "Group Index", "key": "WFGroupIndex", "default": "1", "condition": "Group At Index"}
+        ]
+    },
+    "text.match":
+    {
+        "prettyName": "Match Text",
+        "iconName": "text",
+        "lines" : [
+            {"type": "input", "label": "Pattern", "key": "WFMatchTextPattern", "default": "[0-9a-zA-Z]"},
+            {"type": "switch", "label": "Case Sensitive", "key": "WFMatchTextCaseSensitive", "default": true}
+        ]
+    },
+    "text.replace":
+    {
+        "prettyName": "Replace Text",
+        "iconName": "text",
+        "lines" : [
+            {"type" : "input", "label" : "Find Text", "key": "WFReplaceTextFind", "default": " "},
+            {"type" : "input", "label" : "Replace With", "key": "WFReplaceTextReplace", "default": " "},
+            {"type" : "switch", "label" : "Case Sensitive", "key": "WFReplaceTextCaseSensitive", "default" : true},
+            {"type" : "switch", "label" : "Regular Expression", "key": "WFReplaceTextRegularExpression", "default" : false}
+        ]
+    },
+    "text.split":
+    {
+        "prettyName": "Split Text",
+        "iconName": "text",
+        "lines" : [
+            {"type": "choice", "label": "Separator", "key": "WFTextSeparator", "choices": ["New Lines", "Spaces", "Every Character", "Custom"]}
+        ]
+    },
+    "com.guidedways.2Do.add":
+    {
+        "prettyName": "Add 2Do Task",
+        "iconName": "2do"
+    },
+    "com.boonbits.captio.appendtonote":
+    {
+        "prettyName": "Append to Note",
+        "iconName": "captio"
+    },
+    "com.boonbits.captio.sendnote":
+    {
+        "prettyName": "Send Note",
+        "iconName": "captio"
+    },
+    "com.realmacsoftware.clear.createlist":
+    {
+        "prettyName": "Add Clear List",
+        "iconName": "clear"
+    },
+    "com.realmacsoftware.clear.createtask":
+    {
+        "prettyName": "Add Clear Task",
+        "iconName": "clear"
+    },
+    "com.dayonelog.dayoneiphone.post":
+    {
+        "prettyName": "Create Day One Entry",
+        "iconName": "dayone"
+    },
+    "com.phocusllp.due.add":
+    {
+        "prettyName": "Add Due Reminder",
+        "iconName": "due"
+    },
+    "com.outerspaceapps.itranslate.translate":
+    {
+        "prettyName": "Show in iTranslate",
+        "iconName": "itranslate"
+    },
+    "com.omnigroup.OmniFocus2.iPhone.newitem":
+    {
+        "prettyName": "Add OmniFocus Item",
+        "iconName": "omnifocus"
+    },
+    "com.omnigroup.OmniFocus2.iPhone.pastetaskpaper":
+    {
+        "prettyName": "Add TaskPaper to OmniFocus",
+        "iconName": "omnifocus"
+    },
+    "com.potionfactory.TheHitListMobile.tasks":
+    {
+        "prettyName": "Add Task to The Hit List",
+        "iconName": "thehitlist"
+    },
+    "com.culturedcode.ThingsTouch.addtask":
+    {
+        "prettyName": "Add Things To-Do",
+        "iconName": "things"
+    },
+    "todoist.add":
+    {
+        "prettyName": "Add Todoist Item",
+        "iconName": "todoist"
+    },
+    "trello.add.card":
+    {
+        "prettyName": "Add Trello Card",
+        "iconName": "trello"
+    },
+    "trello.add.board":
+    {
+        "prettyName": "Create Trello Board",
+        "iconName": "trello"
+    },
+    "trello.add.list":
+    {
+        "prettyName": "Create Trello List",
+        "iconName": "trello"
+    },
+    "properties.trello":
+    {
+        "prettyName": "Get Details of Trello Item",
+        "iconName": "trello"
+    },
+    "trello.get":
+    {
+        "prettyName": "Get Trello Items",
+        "iconName": "trello"
+    },
+    "wunderlist.add":
+    {
+        "prettyName": "Add Wunderlist Task",
+        "iconName": "wunderlist"
+    },
+    "filter.articles":
+    {
+        "prettyName": "Filter Articles",
+        "iconName": "rich"
+    },
+    "properties.articles":
+    {
+        "prettyName": "Get Details of Diffbot Article",
+        "iconName": "rich"
+    },
+    "getarticle":
+    {
+        "prettyName": "Get Diffbot Article from Web Page",
+        "iconName": "diffbot"
+    },
+    "giphy":
+    {
+        "prettyName": "Search Giphy",
+        "iconName": "giphy"
+    },
+    "readinglist":
+    {
+        "prettyName": "Add to Reading List",
+        "iconName": "safari"
+    },
+    "getwebpagecontents":
+    {
+        "prettyName": "Get Contents of Web Page",
+        "iconName": "safari"
+    },
+    "properties.safariwebpage":
+    {
+        "prettyName": "Get Details of Safari Web Page",
+        "iconName": "safari"
+    },
+    "openurl":
+    {
+        "prettyName": "Open URLs",
+        "iconName": "safari"
+    },
+    "runjavascriptonwebpage":
+    {
+        "prettyName": "Run JavaScript on Web Page",
+        "iconName": "safari"
+    },
+    "searchweb":
+    {
+        "prettyName": "Search Web",
+        "iconName": "safari"
+    },
+    "showwebpage":
+    {
+        "prettyName": "Show Web Page",
+        "iconName": "safari"
+    },
+    "url.expand":
+    {
+        "prettyName": "Expand URL",
+        "iconName": "url"
+    },
+    "geturlcomponent":
+    {
+        "prettyName": "Get Component of URL",
+        "iconName": "url"
+    },
+    "downloadurl":
+    {
+        "prettyName": "Get Contents of URL",
+        "iconName": "get"
+    },
+    "url.getheaders":
+    {
+        "prettyName": "Get Headers of URL",
+        "iconName": "get"
+    },
+    "rss":
+    {
+        "prettyName": "Get Items from RSS Feed",
+        "iconName": "rss"
+    },
+    "rss.extract":
+    {
+        "prettyName": "Get RSS Feeds from Page",
+        "iconName": "rss"
+    },
+    "detect.link":
+    {
+        "prettyName": "Get URLs from Input",
+        "iconName": "url"
+    },
+    "url":
+    {
+        "prettyName": "URL",
+        "iconName": "url"
+    },
+    "squibner.AmazonLinker.convert":
+    {
+        "prettyName": "Convert URL with Associate",
+        "iconName": "associate"
+    },
+    "squibner.AmazonLinker.search":
+    {
+        "prettyName": "Search in Associate",
+        "iconName": "associate"
+    },
+    "com.squibner.Blink.convert":
+    {
+        "prettyName": "Convert URL with Blink",
+        "iconName": "blink"
+    },
+    "com.squibner.Blink.search":
+    {
+        "prettyName": "Search in Blink",
+        "iconName": "blink"
+    },
+    "com.google.chrome.ios.openurl":
+    {
+        "prettyName": "Open URLs in Chrome",
+        "iconName": "chrome"
+    },
+    "cloudapp.upload":
+    {
+        "prettyName": "Upload to CloudApp",
+        "iconName": "cloudapp"
+    },
+    "instapaper.add":
+    {
+        "prettyName": "Add to Instapaper",
+        "iconName": "instapaper"
+    },
+    "instapaper.get":
+    {
+        "prettyName": "Get Instapaper Bookmarks",
+        "iconName": "instapaper"
+    },
+    "com.tijo.opener.Opener.show-options":
+    {
+        "prettyName": "Open URL in Opener",
+        "iconName": "opener"
+    },
+    "fm.overcast.overcast.add":
+    {
+        "prettyName": "Add to Overcast",
+        "iconName": "overcast"
+    },
+    "pinboard.add":
+    {
+        "prettyName": "Add to Pinboard",
+        "iconName": "pinboard"
+    },
+    "pinboard.get":
+    {
+        "prettyName": "Get Pinboard Bookmarks",
+        "iconName": "pinboard"
+    },
+    "pocket.add":
+    {
+        "prettyName": "Add to Pocket",
+        "iconName": "pocket"
+    },
+    "pocket.get":
+    {
+        "prettyName": "Get Items from Pocket",
+        "iconName": "pocket"
+    },
+    "comment":
+    {
+        "prettyName": "Comment",
+        "iconName": "text",
+        "lines" : [
+            {"type" : "text", "key" : "WFCommentActionText"}
+        ]
+    },
+    "showresult":
+    {
+        "prettyName": "Show Result",
+        "iconName": "wheel",
+        "lines" : [
+            {"type": "text", "key": "Text"}
+        ]
+    },
+    "count":
+    {
+        "prettyName": "Count",
+        "iconName": "calculator"
+    },
+    "getitemname":
+    {
+        "prettyName": "Get Name",
+        "iconName": "wheel"
+    },
+    "getitemtype":
+    {
+        "prettyName": "Get Type",
+        "iconName": "wheel"
+    },
+    "nothing":
+    {
+        "prettyName": "Nothing",
+        "iconName": "wheel"
+    },
+    "setitemname":
+    {
+        "prettyName": "Set Name",
+        "iconName": "wheel"
+    },
+    "viewresult":
+    {
+        "prettyName": "View Content Graph",
+        "iconName": "contentgraph"
+    },
+    "choosefrommenu":
+    {
+        "prettyName": "Choose from Menu",
+        "iconName": "wheel"
+    },
+    "handoff":
+    {
+        "prettyName": "Continue Shortcut in App",
+        "iconName": "continue"
+    },
+    "exit":
+    {
+        "prettyName": "Exit Shortcut",
+        "iconName": "wheel"
+    },
+    "conditional":
+    {
+        "prettyName": "If",
+        "iconName": "wheel"
+    },
+    "repeat.count":
+    {
+        "prettyName": "Repeat",
+        "iconName": "wheel"
+    },
+    "repeat.each":
+    {
+        "prettyName": "Repeat with Each",
+        "iconName": "wheel"
+    },
+    "delay":
+    {
+        "prettyName": "Wait",
+        "iconName": "wheel"
+    },
+    "waittoreturn":
+    {
+        "prettyName": "Wait to Return",
+        "iconName": "wheel"
+    },
+    "getbatterylevel":
+    {
+        "prettyName": "Get Battery Level",
+        "iconName": "battery"
+    },
+    "getipaddress":
+    {
+        "prettyName": "Get Current IP Address",
+        "iconName": "ip"
+    },
+    "getdevicedetails":
+    {
+        "prettyName": "Get Device Details",
+        "iconName": "wheel"
+    },
+    "getwifi":
+    {
+        "prettyName": "Get Network Details",
+        "iconName": "network"
+    },
+    "airplanemode.set":
+    {
+        "prettyName": "Set Airplane Mode",
+        "iconName": "airplane"
+    },
+    "bluetooth.set":
+    {
+        "prettyName": "Set Bluetooth",
+        "iconName": "bluetooth"
+    },
+    "setbrightness":
+    {
+        "prettyName": "Set Brightness",
+        "iconName": "brightness"
+    },
+    "cellulardata.set":
+    {
+        "prettyName": "Set Mobile Data",
+        "iconName": "data"
+    },
+    "dnd.set":
+    {
+        "prettyName": "Set Do Not Disturb",
+        "iconName": "disturb"
+    },
+    "flashlight":
+    {
+        "prettyName": "Set Torch",
+        "iconName": "torch"
+    },
+    "lowpowermode.set":
+    {
+        "prettyName": "Set Low Power Mode",
+        "iconName": "battery"
+    },
+    "wifi.set":
+    {
+        "prettyName": "Set Wi-Fi",
+        "iconName": "network"
+    },
+    "dictionary":
+    {
+        "prettyName": "Dictionary",
+        "iconName": "wheel"
+    },
+    "detect.dictionary":
+    {
+        "prettyName": "Get Dictionary from Input",
+        "iconName": "wheel"
+    },
+    "getvalueforkey":
+    {
+        "prettyName": "Get Dictionary Value",
+        "iconName": "wheel",
+        "lines" : [
+            {"type": "input", "label" : "Key", "key": "WFDictionaryKey"}
+        ]
+    },
+    "setvalueforkey":
+    {
+        "prettyName": "Set Dictionary Value",
+        "iconName": "wheel"
+    },
+    "base64encode":
+    {
+        "prettyName": "Base64 Encode",
+        "iconName": "wheel"
+    },
+    "hash":
+    {
+        "prettyName": "Generate Hash",
+        "iconName": "wheel"
+    },
+    "choosefromlist":
+    {
+        "prettyName": "Choose from List",
+        "iconName": "wheel"
+    },
+    "getitemfromlist":
+    {
+        "prettyName": "Get Item from List",
+        "iconName": "wheel"
+    },
+    "list":
+    {
+        "prettyName": "List",
+        "iconName": "wheel"
+    },
+    "math":
+    {
+        "prettyName": "Calculate",
+        "iconName": "calculator"
+    },
+    "statistics":
+    {
+        "prettyName": "Calculate Statistics",
+        "iconName": "calculator"
+    },
+    "format.number":
+    {
+        "prettyName": "Format Number",
+        "iconName": "calculator"
+    },
+    "number":
+    {
+        "prettyName": "Number",
+        "iconName": "calculator"
+    },
+    "number.random":
+    {
+        "prettyName": "Random Number",
+        "iconName": "calculator"
+    },
+    "round":
+    {
+        "prettyName": "Round Number",
+        "iconName": "calculator"
+    },
+    "ask":
+    {
+        "prettyName": "Ask for Input",
+        "iconName": "wheel",
+        "lines" : [
+            {"type" : "input", "label" : "Question", "key": "WFAskActionPrompt"},
+            {"type" : "input", "label" : "Default Answer", "key": "WFAskActionDefaultAnswer"},
+            {"type" : "input", "label" : "Input Type", "key": "WFInputType"}
+        ]
+    },
+    "playsound":
+    {
+        "prettyName": "Play Sound",
+        "iconName": "volume"
+    },
+    "alert":
+    {
+        "prettyName": "Show Alert",
+        "iconName": "wheel"
+    },
+    "notification":
+    {
+        "prettyName": "Show Notification",
+        "iconName": "notification"
+    },
+    "vibrate":
+    {
+        "prettyName": "Vibrate Device",
+        "iconName": "notification"
+    },
+    "runsshscript":
+    {
+        "prettyName": "Run Script Over SSH",
+        "iconName": "wheel"
+    },
+    "getmyworkflows":
+    {
+        "prettyName": "Get My Shortcuts",
+        "iconName": "shortcuts"
+    },
+    "runworkflow":
+    {
+        "prettyName": "Run Shortcut",
+        "iconName": "shortcuts"
+    },
+    "appendvariable":
+    {
+        "prettyName": "Add to Variable",
+        "iconName": "variable"
+    },
+    "getvariable":
+    {
+        "prettyName": "Get Variable",
+        "iconName": "variable"
+    },
+    "setvariable":
+    {
+        "prettyName": "Set Variable",
+        "iconName": "variable",
+        "lines" : [
+            {"type" : "input", "label" : "variable", "key": "WFVariableName"}
+        ]
+    },
+    "openxcallbackurl":
+    {
+        "prettyName": "Open X-Callback URL",
+        "iconName": "url"
+    },
+    "urlencode":
+    {
+        "prettyName": "URL Encode",
+        "iconName": "url"
+    },
+    "com.omz-software.Editorial.runworkflow":
+    {
+        "prettyName": "Run Editorial Workflow",
+        "iconName": "editorial"
+    },
+    "com.omz-software.Pythonista.editscript":
+    {
+        "prettyName": "Edit Script",
+        "iconName": "pythonista"
+    },
+    "com.omz-software.Pythonista.runscript":
+    {
+        "prettyName": "Run Script",
+        "iconName": "pythonista"
+    },
+    "com.agiletortoise.Tally2.get":
+    {
+        "prettyName": "Get Tally",
+        "iconName": "tally"
+    },
+    "com.agiletortoise.Tally2.updatetally":
+    {
+        "prettyName": "Update Tally",
+        "iconName": "tally"
+    }
+}
