@@ -51,9 +51,13 @@ function convert(file, res) {
 		console.log(data);
 	 	
 
-	 	fs.writeFile('shortcut.json', JSON.stringify(data));
+	 	fs.writeFile('shortcut.json', JSON.stringify(data), function (err) {
+		  if (err) throw err;
+		  res.download('shortcut.json');
+		  console.log('Saved!');
+		});
 
-		res.download('shortcut.json');
+		
 
 		//res.send('YOLO');
 
