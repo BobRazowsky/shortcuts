@@ -24,11 +24,11 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
-					{expand: true, cwd: 'app/', src: ['*.html'], dest: 'build/release/'},
-					{expand: true, cwd: 'app/js/', src: ['*.js'], dest: 'build/release/js/'},
-					{expand: true, cwd: 'app/js/', src: ['*.json'], dest: 'build/release/js/'},
-					{expand: true, cwd: 'app/images/', src: ['*.png'], dest: 'build/release/images/'},
-					{expand: true, cwd: 'app/data/', src: ['*.xml'], dest: 'build/release/data/'}
+					{expand: true, cwd: 'app/', src: ['*.html'], dest: 'public/'},
+					{expand: true, cwd: 'app/js/', src: ['*.js'], dest: 'public/js/'},
+					{expand: true, cwd: 'app/js/', src: ['*.json'], dest: 'public/js/'},
+					{expand: true, cwd: 'app/images/', src: ['*.png'], dest: 'public/images/'},
+					{expand: true, cwd: 'app/data/', src: ['*.xml'], dest: 'public/data/'}
 				]
 			}
 		},
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 					path: ['css']
 				},
 				files: {
-					'build/release/css/main.css':'app/less/main.less'
+					'public/css/main.css':'app/less/main.less'
 				}
 			}
 		},
