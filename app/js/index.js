@@ -49,7 +49,7 @@ function getXML() {
 
 function getDictionary() {
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", "js/dict.json", false ); // false for synchronous request
+	xmlHttp.open( "GET", "/dict.json", false ); // false for synchronous request
 	xmlHttp.send(null);
 	
 	var dict = JSON.parse(xmlHttp.responseText);
