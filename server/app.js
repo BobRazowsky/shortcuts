@@ -14,12 +14,22 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/convert', function(req, res) {
-	console.log('CONVERT : ', req.body);
+	//console.log('CONVERT : ', req.body);
+
+	let body = '';
+    req.on('data', chunk => {
+        body += chunk.toString(); // convert Buffer to string
+    });
+    req.on('end', () => {
+        console.log(body);
+        res.end('ok');
+    });
+
 	// readBplist('path/to/your.bplist').then((data) => {
 	// 	console.log(data);
 	//   //res.send(data);
 	// });
-	res.send('done');
+	//res.send('done');
 });
 
 app.listen(port, function() {
