@@ -1,8 +1,6 @@
 var shortcut = null;
 
-document.getElementByID('preview').addEventListener('mousedown', () => {
-	init();
-});
+document.getElementById('preview').addEventListener('click', init);
 
 function init() {
 	var xhttp = new XMLHttpRequest();
