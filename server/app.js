@@ -30,6 +30,16 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 	//res.send('done');
 });
 
+app.get('/shortcut', function(req, res) {
+	res.sendFile('shortcut.json', {}, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Retrieved shortcut');
+    }
+  });
+});
+
 app.listen(port, function() {
 	console.log('Listening app on port ' + port);
 });
