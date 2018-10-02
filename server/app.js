@@ -19,8 +19,9 @@ app.use(bodyParser.urlencoded({
 
 app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 	console.log('BODY' + JSON.stringify(req.body));
+	var name = req.body.originalname;
 	console.log(req.file);
-	convert(req.file, res);
+	convert(req.file, res, name);
 });
 
 app.get('/shortcut', function(req, res) {
@@ -37,18 +38,17 @@ app.listen(port, function() {
 	console.log('Listening app on port ' + port);
 });
 
-function convert(file, res) {
+function convert(file, res, name) {
 
 	readBplist(file.path).then((data) => {
 
 		console.log(data);
-		
 
 		fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
 			if (err) throw err;
 			//res.download('shortcut.json');
 
-			res.redirect('/viewer.html');
+			res.redirect('/viewer.html?short=' + name);
 
 			console.log('Saved!');
 		});
