@@ -19,6 +19,9 @@ body #top {
   border-radius: 15px;
   margin-bottom: 10px;
 }
+body #top h2 {
+  line-height: 0.5em;
+}
 body #importer {
   background-color: #e2e2e2;
   width: 380px;
