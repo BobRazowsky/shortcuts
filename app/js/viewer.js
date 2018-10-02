@@ -21,8 +21,8 @@ var colors = {
 
 document.getElementById('shortcut').onchange = function () {
 	var value = this.value.replace("C:\\fakepath\\", "");
-	var value = value.replace(".shortcut", "");
-	document.getElementById('selectedFile').innerHTML = value;
+	var name = value.replace(".shortcut", "");
+	document.getElementById('selectedFile').innerHTML = name;
 };
 
 init();
