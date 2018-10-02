@@ -48,7 +48,7 @@ function convert(file, res) {
 			if (err) throw err;
 			//res.download('shortcut.json');
 
-			res.redirect('back');
+			res.redirect('/viewer.html');
 
 			console.log('Saved!');
 		});

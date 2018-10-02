@@ -1,7 +1,9 @@
 var shortcut = null;
 var nodeDictionary = null;
 
-document.getElementById('preview').addEventListener('click', init);
+//document.getElementById('preview').addEventListener('click', init);
+
+init();
 
 function init() {
 
