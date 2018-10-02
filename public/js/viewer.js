@@ -38,7 +38,7 @@ function init() {
 	var actions = shortcut.WFWorkflowActions;
 	var color = colors[shortcut.WFWorkflowIcon.WFWorkflowIconStartColor];
 
-	document.getElementById('top').style.backgroundImage = "linear-gradient(45deg,"+ LightenDarkenColor(color, -10) +", "+ color +")";
+	document.getElementById('top').style.backgroundImage = "linear-gradient(90deg,"+ LightenDarkenColor(color, -20) +", "+ color +")";
 
 	setTimeout(() => {
 		for(var i = 0; i < actions.length; i++) {
