@@ -17,6 +17,7 @@ body #top {
   padding: 5px;
   margin: auto;
   border-radius: 15px;
+  margin-bottom: 10px;
 }
 body #importer {
   background-color: #e2e2e2;
