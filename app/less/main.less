@@ -12,6 +12,73 @@ body {
 		border-radius: 15px;
 	}
 
+	#importer {
+		background-color: #e2e2e2;
+		width: 380px;
+		height: 180px;
+		padding: 5px;
+		margin: auto;
+		margin-top: 50px;
+		border-radius: 15px;
+
+		#greating {
+			width: 380px;
+			text-align: center;
+		}
+
+		#formContainer {
+
+			width: 250px;
+			margin: auto;
+
+			#shortcut {
+				width: 0.1px;
+				height: 0.1px;
+				opacity: 0;
+				overflow: hidden;
+				position: absolute;
+				z-index: -1;
+				float: left;
+
+				+ label {
+					height: 50px;
+					width: 170px;
+					font-size: 1em;
+				    font-weight: 700;
+				    color: white;
+				    background-color: #007aff;
+				    display: inline-block;
+				    border-radius: 5px;
+				    float: left;
+				    line-height: 3em;
+				    padding-left: 10px;
+				}
+
+				&:focus + label,
+				+ label:hover {
+					background-color: #459cfb;
+				}
+			}
+
+			#submit {
+				float: left;
+				height: 50px;
+				width: 50px;
+				font-size: 1em;
+				background-color: #007aff;
+				border-radius: 5px;
+				border: 0px solid black;
+				margin-left: 5px;
+				color: white;
+				font-weight: 700;
+
+				&:hover {
+					background-color: #459cfb;
+				}
+			}
+		}
+	}
+
 	.node {
 		width: 360px;
 		min-height: 100px;
