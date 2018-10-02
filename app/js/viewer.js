@@ -58,9 +58,11 @@ function init() {
 }
 
 function downloadShortcutJSON() {
-	var xmlHttp = new XMLHttpRequest();
+	/*var xmlHttp = new XMLHttpRequest();
 	xmlHttp.open( "GET", "/downloadshortcut", false ); // false for synchronous request
-	xmlHttp.send(null);
+	xmlHttp.send(null);*/
+
+	window.open('/downloadshortcut');
 }
 
 function getShortcut() {

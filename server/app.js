@@ -24,7 +24,7 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 });
 
 app.get('/downloadshortcut', function(req, res, next) {
-	res.download(__dirname + '/shortcut.json');
+	res.download(__dirname + '/shortcut.json', 'shortcut.json');
 });
 
 app.get('/shortcut', function(req, res) {
