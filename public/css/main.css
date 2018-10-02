@@ -15,9 +15,16 @@ body #importer {
   width: 380px;
   height: 200px;
   padding: 5px;
+  border-radius: 15px;
+}
+body #importer.viewer {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+body #importer.index {
   margin: auto;
   margin-top: 50px;
-  border-radius: 15px;
 }
 body #importer #greating {
   width: 380px;

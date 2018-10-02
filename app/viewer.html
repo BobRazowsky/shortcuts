@@ -5,7 +5,22 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <body>
-	
+	<div id="importer" class="viewer">
+		<div id="greating">
+			<p>Preview any shortcut from its .shortcut file</p>
+		</div>
+		<div id="formContainer">
+			<form method="post" action="/convert" enctype="multipart/form-data">
+				<input type="file" id="shortcut" name="shortcut">
+				<label for="shortcut">Choose a shortcut...</label>
+				<button id="submit">Go.</button>
+			</form>
+		</div>
+		<div id="bottom">
+			<p id="selectedFile"></p>
+		</div>
+	</div>
+
 	<div id="container"></div>
 
 	<script src="./js/viewer.js"></script>
