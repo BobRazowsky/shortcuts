@@ -23,6 +23,10 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 	convert(req.file, res, name);
 });
 
+app.get('/downloadshortcut', function(req, res, next) {
+	res.download(__dirname + '/shortcut.json');
+});
+
 app.get('/shortcut', function(req, res) {
 	res.sendFile(__dirname + '/shortcut.json', {}, function (err) {
 		if (err) {

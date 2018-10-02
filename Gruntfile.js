@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 					{expand: true, cwd: 'app/', src: ['*.html'], dest: 'public/'},
 					{expand: true, cwd: 'app/js/', src: ['*.js'], dest: 'public/js/'},
 					{expand: true, cwd: 'app/js/', src: ['*.json'], dest: 'public/js/'},
-					{expand: true, cwd: 'app/images/', src: ['*.png'], dest: 'public/images/'},
+					{expand: true, cwd: 'app/images/icons/', src: ['*.png'], dest: 'public/images/icons'},
 					{expand: true, cwd: 'app/data/', src: ['*.xml'], dest: 'public/data/'}
 				]
 			}

@@ -24,6 +24,10 @@ document.getElementById('shortcut').onchange = function () {
 	document.getElementById('selectedFile').innerHTML = value;
 };
 
+document.getElementById('download').onchange = function () {
+	downloadShortcutJSON();
+};
+
 init();
 
 function init() {
@@ -51,6 +55,12 @@ function init() {
 	var value = name.replace(".shortcut", "");
 
 	document.getElementById('shortcutName').innerHTML = value;
+}
+
+function downloadShortcutJSON() {
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open( "GET", "/downloadshortcut", false ); // false for synchronous request
+	xmlHttp.send(null);
 }
 
 function getShortcut() {
@@ -124,7 +134,7 @@ function createNode(action) {
 	//Add header icon
 	if(nodeDictionary[nodeUglyTitle].iconName) {
 		var nodeIcon = document.createElement('img');
-		nodeIcon.src = './images/' + nodeDictionary[nodeUglyTitle].iconName + '.png';
+		nodeIcon.src = './images/icons/' + nodeDictionary[nodeUglyTitle].iconName + '.png';
 		nodeIcon.alt = nodeUglyTitle;
 		nodeIcon.classList.add('icon');
 		nodeIcon.width = 32;

@@ -40,6 +40,18 @@ body #importer.index {
   margin: auto;
   margin-top: 50px;
 }
+body #importer #downloadBtn {
+  height: 50px;
+  width: 170px;
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+  background-color: #007aff;
+  display: inline-block;
+  border-radius: 5px;
+  line-height: 3em;
+  text-align: center;
+}
 body #importer #greating {
   width: 380px;
   text-align: center;
