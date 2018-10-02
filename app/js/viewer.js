@@ -21,15 +21,13 @@ var colors = {
 
 document.getElementById('shortcut').onchange = function () {
 	var value = this.value.replace("C:\\fakepath\\", "");
-	var name = value.replace(".shortcut", "");
-	document.getElementById('selectedFile').innerHTML = name;
+	document.getElementById('selectedFile').innerHTML = value;
 };
 
 init();
 
 function init() {
 
-	console.log('INIT');
 	shortcut = getShortcut();
 
 	console.log(shortcut);
@@ -49,10 +47,10 @@ function init() {
 
 	var url_string = window.location.href;
 	var url = new URL(url_string);
-	var shortcutName = url.searchParams.get("short");
+	var name = url.searchParams.get("short");
+	var value = name.replace(".shortcut", "");
 
-	document.getElementById('shortcutName').innerHTML = shortcutName;
-	console.log(shortcutName);
+	document.getElementById('shortcutName').innerHTML = value;
 }
 
 function getShortcut() {
