@@ -22,6 +22,7 @@ body #top {
 body #top h2 {
   line-height: 0.5em;
   color: white;
+  text-align: center;
 }
 body #importer {
   background-color: #e2e2e2;
