@@ -28,6 +28,8 @@ function init() {
 	var url_string = window.location.href;
 	var url = new URL(url_string);
 	var shortcutName = url.searchParams.get("short");
+
+	document.getElementById('shortcutName').innerHTML = shortcutName;
 	console.log(shortcutName);
 }
 
