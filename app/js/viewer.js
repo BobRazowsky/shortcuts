@@ -24,9 +24,7 @@ document.getElementById('shortcut').onchange = function () {
 	document.getElementById('selectedFile').innerHTML = value;
 };
 
-document.getElementById('downloadBtn').onclick = function () {
-	downloadShortcutJSON();
-};
+
 
 init();
 
@@ -35,6 +33,8 @@ function init() {
 	shortcut = getShortcut();
 
 	console.log(shortcut);
+
+	document.getElementById('downloadBtn').addEventListener('click', downloadShortcutJSON);
 
 	nodeDictionary = getDictionary();
 
