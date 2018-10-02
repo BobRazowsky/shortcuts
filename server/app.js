@@ -18,9 +18,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/convert', upload.single('shortcut'), function(req, res, next) {
-	console.log('BODY' + JSON.stringify(req.body));
-	var name = req.body.originalname;
-	console.log(req.file);
+	var name = req.file.originalname;
+	console.log('FILE', req.file);
 	convert(req.file, res, name);
 });
 
