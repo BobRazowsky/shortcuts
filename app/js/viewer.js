@@ -1,6 +1,24 @@
 var shortcut = null;
 var nodeDictionary = null;
 
+var colors = {
+	"-12365313" : "#ca0627",
+	"-43634177" : "#d73700",
+	"-23508481" : "#e45e00",
+	"-20702977" : "#e08d00",
+	"-2873601" : "#3aa313",
+	"431817727" : "#00ae95",
+	"1440408063" : "#009fc9",
+	"463140863" : "#0083e3",
+	"946986751" : "#004dbf",
+	"2071128575" : "#5427be",
+	"-615917313" : "#8a0fa9",
+	"-314141441" : "#cb3983",
+	"255" : "#56575b",
+	"-1263359489" : "#817f6e",
+	"-1448498689" : "#737d94"
+};
+
 document.getElementById('shortcut').onchange = function () {
 	var value = this.value.replace("C:\\fakepath\\", "");
 	document.getElementById('selectedFile').innerHTML = value;
@@ -18,6 +36,9 @@ function init() {
 	nodeDictionary = getDictionary();
 
 	var actions = shortcut.WFWorkflowActions;
+	var color = colors[shortcut.WFWorkflowIcon.WFWorkflowIconStartColor];
+
+	document.getElementById('top').style.backgroundColor = color;
 
 	setTimeout(() => {
 		for(var i = 0; i < actions.length; i++) {
