@@ -24,6 +24,11 @@ function init() {
 			createNode(actions[i]);
 		}
 	}, 500);
+
+	var url_string = window.location.href;
+	var url = new URL(url_string);
+	var shortcutName = url.searchParams.get("short");
+	console.log(shortcutName);
 }
 
 function getShortcut() {
