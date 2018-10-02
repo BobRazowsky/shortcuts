@@ -13,7 +13,7 @@ body #container {
 body #importer {
   background-color: #e2e2e2;
   width: 380px;
-  height: 180px;
+  height: 200px;
   padding: 5px;
   margin: auto;
   margin-top: 50px;
@@ -23,8 +23,17 @@ body #importer #greating {
   width: 380px;
   text-align: center;
 }
+body #importer #bottom {
+  width: 380px;
+  height: 50px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 700;
+  margin-top: 10px;
+}
 body #importer #formContainer {
   width: 250px;
+  height: 50px;
   margin: auto;
 }
 body #importer #formContainer #shortcut {
