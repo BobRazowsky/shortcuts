@@ -5,11 +5,16 @@
 ## Building
 
 * Install packages with `npm install`
-* `grunt build` to update *release* folder
-* 
+* `grunt build` to create *public* folder
+* You can use `grunt watch` to rebuild each time you change a file
 
-## Requirements
+## Running
 
-* You need to convert the `.shortcut` file to` XML plist`
-* To do so, rename `file.shortcut` to `file.plit`, open with XCode and export to` XML plist`. Then, rename `file.plist` to `file.xml`.
+* Start server with node server/app.js
+* Visit localhost:3000
+
+## Packages used
+
+* Express JS for the server
+* read-bplist to read .shortcut files
 
