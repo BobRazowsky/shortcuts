@@ -24,7 +24,7 @@ document.getElementById('shortcut').onchange = function () {
 	document.getElementById('selectedFile').innerHTML = value;
 };
 
-document.getElementById('downloadBtn').onchange = function () {
+document.getElementById('downloadBtn').onclick = function () {
 	downloadShortcutJSON();
 };
 
