@@ -8,19 +8,11 @@
 	<div id="importer" class="index">
 		<div id="greating">
 			<h2>Welcome to Shortcuts Preview</h2>
-			<p>Preview any shortcut from its .shortcut file</p>
+			<p>Preview any shortcut from the iCloud URL</p>
 		</div>
-		<!-- <div id="formContainer">
-			<form method="post" action="/convert" enctype="multipart/form-data">
-				<input type="file" id="shortcut" name="shortcut">
-				<label for="shortcut">Choose a shortcut...</label>
-				<button id="submit">Go.</button>
-			</form>
-		</div> -->
 		<div id="formContainer">
 			<form method="post" action="/getfromicloud" enctype='application/json'>
-				<input type="text" id="shortcutURL" name="shortcutURL">
-				<label for="shortcutURL">Choose a shortcut...</label>
+				<input type="text" id="shortcutURL" name="shortcutURL" placeholder="iCloud URL">
 				<button id="submit">Go.</button>
 			</form>
 		</div>

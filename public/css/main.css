@@ -31,7 +31,7 @@ body #top h2 {
 }
 body #importer {
   background-color: #e2e2e2;
-  width: 380px;
+  width: 600px;
   height: 200px;
   padding: 5px;
   border-radius: 15px;
@@ -58,11 +58,11 @@ body #importer #downloadBtn {
   text-align: center;
 }
 body #importer #greating {
-  width: 380px;
+  width: 600px;
   text-align: center;
 }
 body #importer #bottom {
-  width: 380px;
+  width: 600px;
   height: 50px;
   text-align: center;
   font-size: 1em;
@@ -70,38 +70,17 @@ body #importer #bottom {
   margin-top: 10px;
 }
 body #importer #formContainer {
-  width: 250px;
+  width: 300px;
   height: 50px;
   margin: auto;
 }
-body #importer #formContainer #shortcut {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  float: left;
-}
-body #importer #formContainer #shortcut + label {
+body #importer #formContainer #shortcutURL {
   height: 50px;
-  width: 170px;
-  font-size: 1em;
-  font-weight: 700;
-  color: white;
-  background-color: #007aff;
-  display: inline-block;
-  border-radius: 5px;
-  float: left;
-  line-height: 3em;
-  padding-left: 10px;
-}
-body #importer #formContainer #shortcut:focus + label,
-body #importer #formContainer #shortcut + label:hover {
-  background-color: #459cfb;
+  width: 230px;
+  border-radius: 10px;
+  border: 0px solid white;
 }
 body #importer #formContainer #submit {
-  float: left;
   height: 50px;
   width: 50px;
   font-size: 1em;
