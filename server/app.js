@@ -90,12 +90,12 @@ function convert(file, res, name) {
 }
 
 function createFile(content, res) {
-	fs.writeFile(__dirname + '/shortcut.plist', "lol", function (err) {
+	fs.writeFile(__dirname + '/shortcut.plist', content, function (err) {
 		if (err) throw err;
 
 		console.log('Saved!');
 
-		res.download('shortcut.plist');
+		res.download(__dirname + 'shortcut.plist');
 
 		//readPList('shortcut.plist', res);
 
