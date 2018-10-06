@@ -37,8 +37,9 @@ app.post('/getfromicloud', function(req, res, next) {
 			if (xhr.status === 200) {
 				var resp = JSON.parse(xhr.responseText);
 				var url = resp.fields.shortcut.value.downloadURL;
+				var name = resp.fields.name.value;
 				console.log(xhr.responseText);
-				getJSONFromiCloud(url, res);
+				getJSONFromiCloud(url, name, res);
 				//res.send(url);
 			} else {
 				console.error(xhr.statusText);
@@ -79,7 +80,6 @@ function convert(file, res, name) {
 
 		fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
 			if (err) throw err;
-			//res.download('shortcut.json');
 
 			res.redirect('/viewer.html?short=' + name);
 
@@ -90,38 +90,29 @@ function convert(file, res, name) {
 
 }
 
-function createFile(content, res) {
+function createFile(content, name, res) {
 	fs.writeFile(__dirname + '/shortcut.plist', content, function (err) {
 		if (err) throw err;
-
-		console.log('Saved!');
-
-		//res.download(__dirname + '/shortcut.plist');
-
-		readPList(__dirname + '/shortcut.plist', res);
-
-		
+		readPList(__dirname + '/shortcut.plist', name, res);
 	});
 }
 
-function readPList(file, res) {
+function readPList(file, name, res) {
 	readBplist(__dirname + '/shortcut.plist').then((data) => {
 
 		console.log('DATA', data);
 
 		fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
 			if (err) throw err;
-			//res.download('shortcut.json');
 
-			res.redirect('/viewer.html');
+			res.redirect('/viewer.html?short=' + name);
 
-			console.log('DONE!');
 		});
 
 	});
 }
 
-function getJSONFromiCloud(url, res) {
+function getJSONFromiCloud(url, name, res) {
 
 	var requestSettings = {
 		method: 'GET',
@@ -131,32 +122,6 @@ function getJSONFromiCloud(url, res) {
 
 	request(requestSettings, function(error, response, body) {
 	    console.log(body);
-	    createFile(body, res);
-	    //res.send("YOUHOU");
+	    createFile(body, name, res);
 	});
-
-	// var xhr = new XMLHttpRequest();
-	// xhr.open( "GET", url, true ); // false for synchronous request
-	// xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=ISO-8859-1')
-	// //xhr.responseType = "arraybuffer";
-
-	// xhr.onload = (e) => {
-	// 	if (xhr.readyState === 4) {
-	// 		if (xhr.status === 200) {
-	// 			var resp = xhr.responseText;
-	// 			//createFile(resp, res);
-	// 			console.log(resp);
-	// 			res.send(resp);
-	// 			//res.send(resp);
-	// 		} else {
-	// 			console.error(xhr.statusText);
-	// 		}
-	// 	}
-	// };
-	// xhr.onerror = (e) => {
-	// 	console.error(xhr.statusText);
-	// 	res.send('ERROR', e);
-	// };
-
-	// xhr.send(null);
 }
