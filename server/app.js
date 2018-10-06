@@ -131,7 +131,8 @@ function getJSONFromiCloud(url, res) {
 
 	request(requestSettings, function(error, response, body) {
 	    console.log(body);
-	    res.send("YOUHOU");
+	    createFile(body, res);
+	    //res.send("YOUHOU");
 	});
 
 	// var xhr = new XMLHttpRequest();
