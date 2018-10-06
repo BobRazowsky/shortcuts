@@ -112,9 +112,9 @@ function createNode(action) {
 				case 'table':
 					content.push(createTable(actionParams, lines[k]));
 					break;
-				case 'list':
-					content.push(createList(actionParams, lines[k]));
-					break;
+				// case 'list':
+				// 	content.push(createList(actionParams, lines[k]));
+				// 	break;
 
 			}
 		}

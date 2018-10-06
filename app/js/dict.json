@@ -1322,7 +1322,7 @@
 		"prettyName": "Choose from Menu",
 		"iconName": "wheel",
 		"lines" : [
-			{"type": "input", "label": "Prompt", "key":""},
+			{"type": "input", "label": "Prompt", "key":"WFMenuPrompt"},
 			{"type": "list"}
 		]
 	},
