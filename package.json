@@ -13,7 +13,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "multer": "^1.4.0",
-    "read-bplist": "^1.0.0"
+    "read-bplist": "^1.0.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "grunt-browserify": "^5.3.0",
