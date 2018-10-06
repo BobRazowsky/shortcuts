@@ -27,8 +27,6 @@ function init() {
 
 	console.log(shortcut);
 
-	document.getElementById('downloadBtn').addEventListener('click', downloadShortcutJSON);
-
 	nodeDictionary = getDictionary();
 
 	var actions = shortcut.WFWorkflowActions;
