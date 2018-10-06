@@ -3,6 +3,7 @@ var readBplist = require('read-bplist');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var multer  = require('multer');
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 var port = process.env.PORT || 3000;
 
