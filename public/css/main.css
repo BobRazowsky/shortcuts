@@ -77,7 +77,7 @@ body #importer #formContainer {
 body #importer #formContainer #shortcutURL {
   height: 50px;
   width: 230px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 0px solid white;
 }
 body #importer #formContainer #submit {
