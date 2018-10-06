@@ -1320,7 +1320,11 @@
 	"choosefrommenu":
 	{
 		"prettyName": "Choose from Menu",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines" : [
+			{"type": "input", "label": "Prompt", "key":""},
+			{"type": "list"}
+		]
 	},
 	"handoff":
 	{

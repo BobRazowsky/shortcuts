@@ -112,6 +112,9 @@ function createNode(action) {
 				case 'table':
 					content.push(createTable(actionParams, lines[k]));
 					break;
+				case 'list':
+					content.push(createList(actionParams, lines[k]));
+					break;
 
 			}
 		}
@@ -247,6 +250,28 @@ function createTableLine(key, value) {
 	v.innerHTML = value;
 	v.classList.add('right');
 	domLine.appendChild(v);
+
+	return domLine;
+}
+
+function createList(actionParams, line) {
+	var lines = [];
+	var keys = actionParams.WFMenuItems;
+	for(var i = 0; i < keys.length; i++) {
+		lines.push(createListLine(keys[i]));
+	}
+
+	return lines;
+}
+
+function createListLine(key) {
+	var domLine = document.createElement('div');
+	domLine.classList.add('line');
+
+	var n = document.createElement('p');
+	n.innerHTML = key;
+	n.classList.add('left');
+	domLine.appendChild(n);
 
 	return domLine;
 }
