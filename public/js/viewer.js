@@ -19,13 +19,6 @@ var colors = {
 	"-1448498689" : "#737d94"
 };
 
-document.getElementById('shortcut').onchange = function () {
-	var value = this.value.replace("C:\\fakepath\\", "");
-	document.getElementById('selectedFile').innerHTML = value;
-};
-
-
-
 init();
 
 function init() {

@@ -2,6 +2,11 @@ body {
   font-family: sans-serif;
   background-color: #333333;
 }
+body #back {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
 body #container {
   background-color: #e2e2e2;
   width: 380px;
