@@ -30,17 +30,14 @@ app.post('/getfromicloud', function(req, res, next) {
 
 	var xhr = new XMLHttpRequest();
 	xhr.open( "GET", "https://www.icloud.com/shortcuts/api/records/" + UUID, true ); // false for synchronous request
-	xhr.responseType = "text";
 
 	xhr.onload = (e) => {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
-				//var resp = JSON.parse(xhr.responseText);
-				//var url = resp.fields.shortcut.value.downloadURL;
-				//console.log(xhr.responseText);
+				var resp = JSON.parse(xhr.responseText);
+				var url = resp.fields.shortcut.value.downloadURL;
 				console.log(xhr.responseText);
-				res.send('OK');
-				//getJSONFromiCloud(url, res);
+				getJSONFromiCloud(url, res);
 				//res.send(url);
 			} else {
 				console.error(xhr.statusText);
@@ -126,13 +123,16 @@ function readPList(file, res) {
 function getJSONFromiCloud(url, res) {
 	var xhr = new XMLHttpRequest();
 	xhr.open( "GET", url, true ); // false for synchronous request
+	xhr.responseType = "arraybuffer";
 
 	xhr.onload = (e) => {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
-				var resp = xhr.responseText;
-				createFile(resp, res);
+				var resp = xhr.response;
+				//var resp = xhr.responseText;
+				//createFile(resp, res);
 				console.log(resp);
+				res.send('Wallah');
 				//res.send(resp);
 			} else {
 				console.error(xhr.statusText);
