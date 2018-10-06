@@ -25,9 +25,12 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 	convert(req.file, res, name);
 });
 
-app.get('/url', function(req, res, next) {
+app.get('/getshortcut', function(req, res, next) {
 	var shortcutURL = req.query.url;
 	var UUID = shortcutURL.replace('https://www.icloud.com/shortcuts/', '');
+
+	var xhr = new XMLHttpRequest();
+	xhr.open( "GET", "https://www.icloud.com/shortcuts/api/records/" + UUID, true ); // false for synchronous request
 
 	xhr.onload = (e) => {
 		if (xhr.readyState === 4) {
