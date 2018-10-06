@@ -96,7 +96,8 @@ function getJSONFromiCloud(url, res) {
 	xhr.onload = (e) => {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
-				var resp = JSON.parse(xhr.responseText);
+				var resp = xhr.responseText;
+				console.log(resp);
 				res.send(resp);
 			} else {
 				console.error(xhr.statusText);
