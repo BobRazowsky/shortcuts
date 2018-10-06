@@ -24,7 +24,7 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 });
 
 app.post('/getfromicloud', function(req, res, next) {
-	console.log('FILE', req);
+	console.log('link', req.body.shortcutURL);
 	res.send('OK');
 });
 
