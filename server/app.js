@@ -25,6 +25,32 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 	convert(req.file, res, name);
 });
 
+app.get('/url', function(req, res, next) {
+	var shortcutURL = req.query.url;
+	var UUID = shortcutURL.replace('https://www.icloud.com/shortcuts/', '');
+
+	xhr.onload = (e) => {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				var resp = JSON.parse(xhr.responseText);
+				var url = resp.fields.shortcut.value.downloadURL;
+				var name = resp.fields.name.value;
+				console.log(xhr.responseText);
+				getJSONFromiCloud(url, name, res);
+				//res.send(url);
+			} else {
+				console.error(xhr.statusText);
+			}
+		}
+	};
+	xhr.onerror = (e) => {
+		console.error(xhr.statusText);
+		res.send('ERROR', e);
+	};
+
+	xhr.send(null);
+});
+
 app.post('/getfromicloud', function(req, res, next) {
 	console.log('link', req.body.shortcutURL);
 	var UUID = req.body.shortcutURL.replace('https://www.icloud.com/shortcuts/', '');
