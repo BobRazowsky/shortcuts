@@ -93,7 +93,7 @@ function createFile(content, res) {
 	fs.writeFile(__dirname + '/shortcut.plist', content, function (err) {
 		if (err) throw err;
 
-		readBplist('/shortcut.plist').then((data) => {
+		readBplist(__dirname + '/shortcut.plist').then((data) => {
 
 			console.log(data);
 
