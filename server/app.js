@@ -90,7 +90,7 @@ function convert(file, res, name) {
 }
 
 function createFile(content, res) {
-	fs.writeFile(__dirname + '/shortcut.plist', content, function (err) {
+	fs.writeFile(__dirname + '/shortcut.plist', "lol", function (err) {
 		if (err) throw err;
 
 		console.log('Saved!');
