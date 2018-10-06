@@ -28,13 +28,25 @@ app.post('/getfromicloud', function(req, res, next) {
 	console.log('link', req.body.shortcutURL);
 	var UUID = req.body.shortcutURL.replace('https://www.icloud.com/shortcuts/', '');
 
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", "https://www.icloud.com/shortcuts/api/records/" + UUID, true ); // false for synchronous request
-	xmlHttp.send(null);
-	var response = JSON.parse(xmlHttp.responseText);
-	console.log('RESPONSE', response);
+	var xhr = new XMLHttpRequest();
+	xhr.open( "GET", "https://www.icloud.com/shortcuts/api/records/" + UUID, true ); // false for synchronous request
 
-	res.send(UUID);
+	xhr.onload = (e) => {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				console.log(xhr.responseText);
+				res.send(xhr.responseText);
+			} else {
+				console.error(xhr.statusText);
+			}
+		}
+	};
+	xhr.onerror = (e) => {
+		console.error(xhr.statusText);
+		res.send('ERROR', e);
+	};
+
+	xhr.send(null);
 });
 
 app.get('/downloadshortcut', function(req, res, next) {
