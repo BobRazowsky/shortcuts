@@ -37,7 +37,8 @@ app.post('/getfromicloud', function(req, res, next) {
 				var resp = JSON.parse(xhr.responseText);
 				var url = resp.fields.shortcut.value.downloadURL;
 				console.log(xhr.responseText);
-				res.send(url);
+				getJSONFromiCloud(url, res);
+				//res.send(url);
 			} else {
 				console.error(xhr.statusText);
 			}
@@ -86,4 +87,26 @@ function convert(file, res, name) {
 
 	});
 
+}
+
+function getJSONFromiCloud(url, res) {
+	var xhr = new XMLHttpRequest();
+	xhr.open( "GET", url, true ); // false for synchronous request
+
+	xhr.onload = (e) => {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				var resp = JSON.parse(xhr.responseText);
+				res.send(resp);
+			} else {
+				console.error(xhr.statusText);
+			}
+		}
+	};
+	xhr.onerror = (e) => {
+		console.error(xhr.statusText);
+		res.send('ERROR', e);
+	};
+
+	xhr.send(null);
 }
