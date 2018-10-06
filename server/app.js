@@ -26,6 +26,7 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 app.post('/getfromicloud', function(req, res, next) {
 	console.log('FILE', req);
 	res.send('OK');
+});
 
 app.get('/downloadshortcut', function(req, res, next) {
 	res.download(__dirname + '/shortcut.json', 'shortcut.json');
