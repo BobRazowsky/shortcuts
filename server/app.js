@@ -25,7 +25,8 @@ app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 
 app.post('/getfromicloud', function(req, res, next) {
 	console.log('link', req.body.shortcutURL);
-	res.send('OK');
+	var UUID = req.body.shortcutURL.replace('https://www.icloud.com/shortcuts/', '');
+	res.send(UUID);
 });
 
 app.get('/downloadshortcut', function(req, res, next) {
