@@ -30,7 +30,7 @@ app.post('/getfromicloud', function(req, res, next) {
 
 	var xhr = new XMLHttpRequest();
 	xhr.open( "GET", "https://www.icloud.com/shortcuts/api/records/" + UUID, true ); // false for synchronous request
-	xhr.responseType = "arraybuffer";
+	xhr.responseType = "blob";
 
 	xhr.onload = (e) => {
 		if (xhr.readyState === 4) {
@@ -39,7 +39,7 @@ app.post('/getfromicloud', function(req, res, next) {
 				//var url = resp.fields.shortcut.value.downloadURL;
 				//console.log(xhr.responseText);
 				console.log(xhr.response);
-				res.sed('OK');
+				res.send('OK');
 				//getJSONFromiCloud(url, res);
 				//res.send(url);
 			} else {
