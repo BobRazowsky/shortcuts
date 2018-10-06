@@ -89,6 +89,29 @@ function convert(file, res, name) {
 
 }
 
+function createFile(content, res) {
+	fs.writeFile(__dirname + '/shortcut.plist', content, function (err) {
+		if (err) throw err;
+
+		readBplist('/shortcut.plist').then((data) => {
+
+			console.log(data);
+
+			fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
+				if (err) throw err;
+				//res.download('shortcut.json');
+
+				res.redirect('/viewer.html');
+
+				console.log('Saved!');
+			});
+
+		});
+
+		console.log('Saved!');
+	});
+}
+
 function getJSONFromiCloud(url, res) {
 	var xhr = new XMLHttpRequest();
 	xhr.open( "GET", url, true ); // false for synchronous request
@@ -97,8 +120,9 @@ function getJSONFromiCloud(url, res) {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
 				var resp = xhr.responseText;
+				createFile(resp, res);
 				console.log(resp);
-				res.send(resp);
+				//res.send(resp);
 			} else {
 				console.error(xhr.statusText);
 			}
