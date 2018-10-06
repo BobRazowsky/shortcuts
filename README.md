@@ -1,6 +1,8 @@
 # Apple Shortcuts Viewer
 
-* Display shortcuts provided as XML.
+* Display shortcuts files.
+
+![alt tag](https://raw.githubusercontent.com/BobRazowsky/shortcuts/master/app/images/screenshot.png)
 
 ## Building
 
