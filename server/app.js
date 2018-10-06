@@ -93,22 +93,28 @@ function createFile(content, res) {
 	fs.writeFile(__dirname + '/shortcut.plist', content, function (err) {
 		if (err) throw err;
 
-		readBplist(__dirname + '/shortcut.plist').then((data) => {
+		console.log('Saved!');
 
-			console.log(data);
+		readPList('shortcut.plist', res);
 
-			fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
-				if (err) throw err;
-				//res.download('shortcut.json');
+		
+	});
+}
 
-				res.redirect('/viewer.html');
+function readPList(file, res) {
+	readBplist(__dirname + '/shortcut.plist').then((data) => {
 
-				console.log('Saved!');
-			});
+		console.log('DATA', data);
 
+		fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
+			if (err) throw err;
+			//res.download('shortcut.json');
+
+			res.redirect('/viewer.html');
+
+			console.log('DONE!');
 		});
 
-		console.log('Saved!');
 	});
 }
 
