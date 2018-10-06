@@ -225,11 +225,30 @@ function createText(actionParams, line) {
 
 function createTable(actionParams, line) {
 	console.log('TABLE', actionParams, line);
+	var lines = [];
 	var keys = actionParams.WFItems.Value[line.key];
 	for(var i = 0; i < keys.length; i++) {
 		console.log(i + " key = " + keys[i].WFKey.Value.string + "// value = " + keys[i].WFValue.Value.string);
+		lines.push(createTableLine(keys[i].WFKey.Value.string, keys[i].WFValue.Value.string));
 	}
 
+	return lines;
+}
+
+function createTableLine(key, value) {
+	var domLine = document.createElement('div');
+	domLine.classList.add('line');
+
+	var n = document.createElement('p');
+	n.innerHTML = key;
+	n.classList.add('left');
+	domLine.appendChild(n);
+	var v = document.createElement('p');
+	v.innerHTML = value;
+	v.classList.add('right');
+	domLine.appendChild(v);
+
+	return domLine;
 }
 
 function createSwitch(actionParams, line) {
