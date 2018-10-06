@@ -21,7 +21,6 @@ app.use(bodyParser.urlencoded({
 
 app.post('/convert', upload.single('shortcut'), function(req, res, next) {
 	var name = req.file.originalname;
-	console.log('FILE', req.file);
 	convert(req.file, res, name);
 });
 
@@ -38,16 +37,13 @@ app.get('/getshortcut', function(req, res, next) {
 				var resp = JSON.parse(xhr.responseText);
 				var url = resp.fields.shortcut.value.downloadURL;
 				var name = resp.fields.name.value;
-				console.log(xhr.responseText);
 				getJSONFromiCloud(url, name, res);
-				//res.send(url);
 			} else {
 				console.error(xhr.statusText);
 			}
 		}
 	};
 	xhr.onerror = (e) => {
-		console.error(xhr.statusText);
 		res.send('ERROR', e);
 	};
 
@@ -55,7 +51,6 @@ app.get('/getshortcut', function(req, res, next) {
 });
 
 app.post('/getfromicloud', function(req, res, next) {
-	console.log('link', req.body.shortcutURL);
 	var UUID = req.body.shortcutURL.replace('https://www.icloud.com/shortcuts/', '');
 
 	var xhr = new XMLHttpRequest();
@@ -67,16 +62,13 @@ app.post('/getfromicloud', function(req, res, next) {
 				var resp = JSON.parse(xhr.responseText);
 				var url = resp.fields.shortcut.value.downloadURL;
 				var name = resp.fields.name.value;
-				console.log(xhr.responseText);
 				getJSONFromiCloud(url, name, res);
-				//res.send(url);
 			} else {
 				console.error(xhr.statusText);
 			}
 		}
 	};
 	xhr.onerror = (e) => {
-		console.error(xhr.statusText);
 		res.send('ERROR', e);
 	};
 
@@ -104,17 +96,10 @@ app.listen(port, function() {
 function convert(file, res, name) {
 
 	readBplist(file.path).then((data) => {
-
-		console.log(data);
-
 		fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
 			if (err) throw err;
-
 			res.redirect('/viewer.html?short=' + name);
-
-			console.log('Saved!');
 		});
-
 	});
 
 }
@@ -128,16 +113,10 @@ function createFile(content, name, res) {
 
 function readPList(file, name, res) {
 	readBplist(__dirname + '/shortcut.plist').then((data) => {
-
-		console.log('DATA', data);
-
 		fs.writeFile(__dirname + '/shortcut.json', JSON.stringify(data), function (err) {
 			if (err) throw err;
-
 			res.redirect('/viewer.html?short=' + name);
-
 		});
-
 	});
 }
 
@@ -150,7 +129,7 @@ function getJSONFromiCloud(url, name, res) {
 	};
 
 	request(requestSettings, function(error, response, body) {
-	    console.log(body);
-	    createFile(body, name, res);
+		console.log(body);
+		createFile(body, name, res);
 	});
 }

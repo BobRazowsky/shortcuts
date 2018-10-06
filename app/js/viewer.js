@@ -109,6 +109,9 @@ function createNode(action) {
 				case 'choice':
 					content.push(createChoiceInput(actionParams, lines[k]));
 					break;
+				case 'table':
+					content.push(createTable(actionParams, lines[k]));
+					break;
 
 			}
 		}
@@ -218,6 +221,15 @@ function createText(actionParams, line) {
 	}
 
 	return result;
+}
+
+function createTable(actionParams, line) {
+	console.log('TABLE', actionParams, line);
+	var keys = actionParams.WFItems.Value[line.key];
+	for(var i = 0; i < keys.length; i++) {
+		console.log(i + " key = " + keys[i].WFKey.Value.string + "// value = " + keys[i].WFValue.Value.string);
+	}
+
 }
 
 function createSwitch(actionParams, line) {
