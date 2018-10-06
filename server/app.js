@@ -96,9 +96,9 @@ function createFile(content, res) {
 
 		console.log('Saved!');
 
-		res.download(__dirname + '/shortcut.plist');
+		//res.download(__dirname + '/shortcut.plist');
 
-		//readPList('shortcut.plist', res);
+		readPList(__dirname + '/shortcut.plist', res);
 
 		
 	});
