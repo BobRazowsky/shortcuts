@@ -3,6 +3,7 @@ var readBplist = require('read-bplist');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var multer  = require('multer');
+var request = require('request');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 var port = process.env.PORT || 3000;
@@ -121,27 +122,40 @@ function readPList(file, res) {
 }
 
 function getJSONFromiCloud(url, res) {
-	var xhr = new XMLHttpRequest();
-	xhr.open( "GET", url, true ); // false for synchronous request
-	//xhr.responseType = "arraybuffer";
 
-	xhr.onload = (e) => {
-		if (xhr.readyState === 4) {
-			if (xhr.status === 200) {
-				var resp = xhr.responseText;
-				//createFile(resp, res);
-				console.log(resp);
-				res.send(resp);
-				//res.send(resp);
-			} else {
-				console.error(xhr.statusText);
-			}
-		}
-	};
-	xhr.onerror = (e) => {
-		console.error(xhr.statusText);
-		res.send('ERROR', e);
+	var requestSettings = {
+		method: 'GET',
+		url: url,
+		encoding: null
 	};
 
-	xhr.send(null);
+	request(requestSettings, function(error, response, body) {
+	    console.log(body);
+	    res.send("YOUHOU");
+	}
+
+	// var xhr = new XMLHttpRequest();
+	// xhr.open( "GET", url, true ); // false for synchronous request
+	// xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=ISO-8859-1')
+	// //xhr.responseType = "arraybuffer";
+
+	// xhr.onload = (e) => {
+	// 	if (xhr.readyState === 4) {
+	// 		if (xhr.status === 200) {
+	// 			var resp = xhr.responseText;
+	// 			//createFile(resp, res);
+	// 			console.log(resp);
+	// 			res.send(resp);
+	// 			//res.send(resp);
+	// 		} else {
+	// 			console.error(xhr.statusText);
+	// 		}
+	// 	}
+	// };
+	// xhr.onerror = (e) => {
+	// 	console.error(xhr.statusText);
+	// 	res.send('ERROR', e);
+	// };
+
+	// xhr.send(null);
 }
