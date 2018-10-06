@@ -123,16 +123,15 @@ function readPList(file, res) {
 function getJSONFromiCloud(url, res) {
 	var xhr = new XMLHttpRequest();
 	xhr.open( "GET", url, true ); // false for synchronous request
-	xhr.responseType = "arraybuffer";
+	//xhr.responseType = "arraybuffer";
 
 	xhr.onload = (e) => {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
-				var resp = xhr.response;
 				//var resp = xhr.responseText;
 				//createFile(resp, res);
 				console.log(resp);
-				res.send('Wallah');
+				res.send(resp);
 				//res.send(resp);
 			} else {
 				console.error(xhr.statusText);
