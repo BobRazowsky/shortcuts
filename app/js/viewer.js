@@ -122,10 +122,12 @@ function displayQuestions(questions) {
 		domLine1.classList.add('line');
 		var quest = document.createElement('p');
 		quest.innerHTML = questions[i].Text;
+		quest.classList.add('text');
 		domLine1.appendChild(quest);
 		var domLine2 = document.createElement('div');
 		domLine2.classList.add('line');
 		var answ = document.createElement('p');
+		answ.classList.add('text');
 		answ.innerHTML = questions[i].DefaultValue;
 		domLine2.appendChild(answ);
 		nodeContent.appendChild(domLine1);
