@@ -86,7 +86,7 @@ function displayQuestions(questions) {
 	}
 
 	var container = document.getElementById('questions');
-	container.style.display = 'inline';
+	container.style.display = 'block';
 
 	for(var i = 0; i < questions.length; i++) {
 		var node = document.createElement('div');
@@ -99,21 +99,23 @@ function displayQuestions(questions) {
 		nodeTop.classList.add('nodeTop');
 		node.appendChild(nodeTop);
 
-		var nodeIconSrc = document.getElementById('node' + questions[i].ActionIndex.children[0].children[0].src);
-		var nodeTitleTxt = document.getElementById('node' + questions[i].ActionIndex.children[0].children[1].innerHTML);
+		// var nodeIconSrc = document.getElementById('node' + questions[i].ActionIndex.children[0].children[0].src);
+		// var nodeTitleTxt = document.getElementById('node' + questions[i].ActionIndex.children[0].children[1].innerHTML);
 
-		var nodeIcon = document.createElement('img');
-		nodeIcon.src = nodeIconSrc;
-		nodeIcon.alt = nodeTitleTxt;
-		nodeIcon.classList.add('icon');
-		nodeIcon.width = 32;
-		nodeIcon.height = 32;
-		nodeTop.appendChild(nodeIcon);
+		console.log(document.getElementById('node' + questions[i]));
 
-		var nodeTitle = document.createElement('p');
-		nodeTitle.classList.add('nodeTitle');
-		nodeTitle.innerHTML = nodeTitleTxt;
-		nodeTop.appendChild(nodeTitle);
+		// var nodeIcon = document.createElement('img');
+		// nodeIcon.src = nodeIconSrc;
+		// nodeIcon.alt = nodeTitleTxt;
+		// nodeIcon.classList.add('icon');
+		// nodeIcon.width = 32;
+		// nodeIcon.height = 32;
+		// nodeTop.appendChild(nodeIcon);
+
+		// var nodeTitle = document.createElement('p');
+		// nodeTitle.classList.add('nodeTitle');
+		// nodeTitle.innerHTML = nodeTitleTxt;
+		// nodeTop.appendChild(nodeTitle);
 	}
 }
 
