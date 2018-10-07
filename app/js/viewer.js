@@ -34,7 +34,7 @@ function init() {
 	var actions = shortcut.WFWorkflowActions;
 	var questions = shortcut.WFWorkflowImportQuestions;
 
-	displayQuestions(questions);
+	
 
 	var color = colors[shortcut.WFWorkflowIcon.WFWorkflowIconStartColor];
 
@@ -42,7 +42,7 @@ function init() {
 
 	setTimeout(() => {
 		for(var i = 0; i < actions.length; i++) {
-			createNode(actions[i]);
+			createNode(actions[i], i);
 		}
 	}, 500);
 
@@ -52,6 +52,8 @@ function init() {
 	var value = name.replace(".shortcut", "");
 
 	document.getElementById('shortcutName').innerHTML = value;
+
+	displayQuestions(questions);
 }
 
 function downloadShortcutJSON() {
@@ -81,7 +83,39 @@ function getDictionary() {
 }
 
 function displayQuestions(questions) {
+	if(questions.length === 0) {
+		return;
+	}
 
+	var container = document.getElementById('questions');
+	container.style.display = 'inline';
+
+	for(var i = 0; i < questions.length; i++) {
+		var node = document.createElement('div');
+		node.classList.add('node');
+		node.id = "question" + i;
+		container.appendChild(node);
+
+		//Add node header
+		var nodeTop = document.createElement('div');
+		nodeTop.classList.add('nodeTop');
+		node.appendChild(nodeTop);
+
+		var nodeIconSrc = document.getElementById('node' + questions[i].ActionIndex.children[0].children[0].src);
+		var nodeTitleTxt = document.getElementById('node' + questions[i].ActionIndex.children[0].children[1].innerHTML);
+
+		var nodeIcon = document.createElement('img');
+		nodeIcon.src = nodeIconSrc;
+		nodeIcon.alt = nodeTitleTxt;
+		nodeIcon.classList.add('icon');
+		nodeIcon.width = 32;
+		nodeIcon.height = 32;
+		nodeTop.appendChild(nodeIcon);
+
+		var nodeTitle = document.createElement('p');
+		nodeTitle.classList.add('nodeTitle');
+		nodeTitle.innerHTML = nodeTitleTxt;
+		nodeTop.appendChild(nodeTitle);
 }
 
 function createNode(action) {
@@ -102,7 +136,7 @@ function createNode(action) {
 	if(typeof flowMode !== "undefined") {
 		console.log(flowMode);
 		if(flowMode == 1 || flowMode == 2) {
-			createFlowNode(action);
+			createFlowNode(action, i);
 			return;
 		}
 	}
@@ -148,6 +182,7 @@ function createNode(action) {
 	// Add node
 	var node = document.createElement('div');
 	node.classList.add('node');
+	node.id = "node" + i;
 	container.appendChild(node);
 
 	//Add node header
@@ -231,6 +266,7 @@ function createFlowNode(action) {
 
 	var node = document.createElement('div');
 	node.classList.add('node');
+	node.id = "node" + i;
 	container.appendChild(node);
 
 	var nodeTop = document.createElement('div');
