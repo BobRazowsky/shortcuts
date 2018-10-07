@@ -193,6 +193,11 @@ function createNode(action) {
 		nodeTitle.classList.add('nodeTitle');
 		nodeTitle.innerHTML = altNodeTitle;
 		nodeTop.appendChild(nodeTitle);
+
+		node.classList.add('small');
+		node.classList.add('flow');
+		nodeTop.classList.add('small');
+
 	}
 
 	
