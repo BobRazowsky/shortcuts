@@ -34,8 +34,6 @@ function init() {
 	var actions = shortcut.WFWorkflowActions;
 	var questions = shortcut.WFWorkflowImportQuestions;
 
-	
-
 	var color = colors[shortcut.WFWorkflowIcon.WFWorkflowIconStartColor];
 
 	document.getElementById('top').style.backgroundImage = "linear-gradient(-90deg,"+ LightenDarkenColor(color, -20) +", "+ color +")";
@@ -53,7 +51,7 @@ function init() {
 
 	document.getElementById('shortcutName').innerHTML = value;
 
-	displayQuestions(questions);
+	//displayQuestions(questions);
 }
 
 function downloadShortcutJSON() {
