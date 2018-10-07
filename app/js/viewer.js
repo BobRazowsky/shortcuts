@@ -91,7 +91,7 @@ function createNode(action) {
 
 	
 
-	if(flowMode) {
+	if(typeof flowMode !== "undefined") {
 		console.log(flowMode);
 		if(flowMode == 1 || flowMode == 2) {
 			createFlowNode(action);
