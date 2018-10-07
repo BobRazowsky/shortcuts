@@ -96,9 +96,6 @@ function createNode(action) {
 		if(flowMode == 1 || flowMode == 2) {
 			createFlowNode(action);
 			return;
-		} else if(flowMode === 0) {
-			console.log('isinflow');
-			isInFlow = true;
 		}
 	}
 
@@ -189,7 +186,12 @@ function createNode(action) {
 		node.classList.add('flow');
 	}
 
-	
+	if(typeof flowMode !== "undefined") {
+		if(flowMode === 0) {
+			console.log('isinflow');
+			isInFlow = true;
+		}
+	}
 }
 
 function createFlowNode(action) {
