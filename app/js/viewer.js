@@ -114,9 +114,7 @@ function createNode(action) {
 					content.push(createText(actionParams, lines[k]));
 					break;
 				case 'input':
-					if(!altNode) {
-						content.push(createLabel(actionParams, lines[k]));
-					}
+					content.push(createLabel(actionParams, lines[k]));
 					break;
 				case 'switch':
 					content.push(createSwitch(actionParams, lines[k]));
