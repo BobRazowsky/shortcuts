@@ -102,7 +102,7 @@ function displayQuestions(questions) {
 		// var nodeIconSrc = document.getElementById('node' + questions[i].ActionIndex.children[0].children[0].src);
 		// var nodeTitleTxt = document.getElementById('node' + questions[i].ActionIndex.children[0].children[1].innerHTML);
 
-		console.log(document.getElementById('node' + questions[i]));
+		console.log(document.getElementById('node' + questions[i].ActionIndex));
 
 		// var nodeIcon = document.createElement('img');
 		// nodeIcon.src = nodeIconSrc;
