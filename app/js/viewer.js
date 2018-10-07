@@ -534,6 +534,7 @@ function createRange(actionParams, line) {
 	v.value = value;
 	v.innerHTML = txt;
 	v.classList.add('right');
+	v.classList.add('range');
 	domLine.appendChild(v);
 
 	result.push(domLine);
