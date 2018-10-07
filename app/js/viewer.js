@@ -98,10 +98,10 @@ function displayQuestions(questions) {
 		nodeTop.classList.add('nodeTop');
 		node.appendChild(nodeTop);
 
-		var nodeIconSrc = document.getElementById('node' + questions[i].ActionIndex.children[0].children[0].src);
-		var nodeTitleTxt = document.getElementById('node' + questions[i].ActionIndex.children[0].children[1].innerHTML);
+		var nodeIconSrc = document.getElementById('node' + questions[i].ActionIndex.childNodes[0].childNodes[0].src);
+		var nodeTitleTxt = document.getElementById('node' + questions[i].ActionIndex.childNodes[0].childNodes[1].innerHTML);
 
-		console.log(document.getElementById('node' + questions[i].ActionIndex).children, questions[i].ActionIndex);
+		console.log(document.getElementById('node' + questions[i].ActionIndex).childNodes, questions[i].ActionIndex);
 
 		var nodeIcon = document.createElement('img');
 		nodeIcon.src = nodeIconSrc;
