@@ -1324,7 +1324,10 @@
 		"lines" : [
 			{"type": "input", "label": "Prompt", "key":"WFMenuPrompt"},
 			{"type": "menu"}
-		]
+		],
+		"nodes" : {
+			"2" : "End Menu"
+		}
 	},
 	"handoff":
 	{
@@ -1352,7 +1355,10 @@
 		"iconName": "wheel",
 		"lines": [
 			{"type": "input", "label": "Repeat Time", "key": ""}
-		]
+		],
+		"nodes" : {
+			"2" : "End Repeat"
+		}
 	},
 	"delay":
 	{
