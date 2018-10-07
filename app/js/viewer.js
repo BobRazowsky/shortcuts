@@ -51,7 +51,7 @@ function init() {
 
 	document.getElementById('shortcutName').innerHTML = value;
 
-	//displayQuestions(questions);
+	displayQuestions(questions);
 }
 
 function downloadShortcutJSON() {
