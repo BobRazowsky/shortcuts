@@ -4,7 +4,7 @@
 		"prettyName": "Open App",
 		"iconName": "openapp",
 		"lines": [
-			{"type": "choice", "label": "App", "key": " ", "choices": ["Devices Installed Apps"]}
+			{"type": "input", "label": "App", "key": "WFAppIdentifier"}
 		]
 	},
 	"properties.appstore":
