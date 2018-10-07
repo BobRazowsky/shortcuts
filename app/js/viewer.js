@@ -195,7 +195,6 @@ function createNode(action) {
 		nodeTop.appendChild(nodeTitle);
 
 		node.classList.add('small');
-		node.classList.add('flow');
 		nodeTop.classList.add('small');
 
 	}
