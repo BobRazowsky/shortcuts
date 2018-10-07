@@ -87,6 +87,13 @@ function createNode(action) {
 	var content = [];
 
 	var actionParams = action.WFWorkflowActionParameters;
+	var altNode = false;
+
+	if(actionParams.WFControlFlowMode) {
+		if(actionParams.WFControlFlowMode !== 0) {
+			altNode = true;
+		}
+	}
 
 	var nodeUglyTitle = action.WFWorkflowActionIdentifier.replace("is.workflow.actions.", "");
 	if(!nodeDictionary[nodeUglyTitle]) {
@@ -104,7 +111,9 @@ function createNode(action) {
 					content.push(createText(actionParams, lines[k]));
 					break;
 				case 'input':
-					content.push(createLabel(actionParams, lines[k]));
+					if(!altNode) {
+						content.push(createLabel(actionParams, lines[k]));
+					}
 					break;
 				case 'switch':
 					content.push(createSwitch(actionParams, lines[k]));
@@ -121,7 +130,7 @@ function createNode(action) {
 					} else if(actionParams.WFControlFlowMode == 1) {
 						noTopNode = true;
 						content.push(createFlowItem(actionParams.WFMenuItemTitle));
-					} else if(actionParams.WFControlFlowMode == 1) {
+					} else if(actionParams.WFControlFlowMode == 2) {
 						noTopNode = true;
 						content.push(createFlowItem("End Menu"));
 					}
