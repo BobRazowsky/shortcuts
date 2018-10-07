@@ -1,6 +1,8 @@
 var shortcut = null;
 var nodeDictionary = null;
 
+var isInFlow = false;
+
 var colors = {
 	"-12365313" : "#ca0627",
 	"-43634177" : "#d73700",
@@ -123,9 +125,11 @@ function createNode(action) {
 						content.push(createList(actionParams, lines[k]));
 					} else if(actionParams.WFControlFlowMode == 1) {
 						altNode = true;
+						isInFlow = true;
 						altNodeTitle = actionParams.WFMenuItemTitle;
 					} else if(actionParams.WFControlFlowMode == 2) {
 						altNode = true;
+						isInFlow = false;
 						altNodeTitle = "End Menu";
 					}
 					
@@ -183,7 +187,10 @@ function createNode(action) {
 		} else {
 			node.classList.add('small');
 			nodeTop.classList.add('small');
-		}	
+		}
+		if(isInFlow) {
+			node.classList.add('flow');
+		}
 	} else {
 		var nodeTop = document.createElement('div');
 		nodeTop.classList.add('nodeTop');
