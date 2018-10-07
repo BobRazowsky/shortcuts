@@ -667,7 +667,10 @@
 	"setvolume":
 	{
 		"prettyName": "Set Volume",
-		"iconName": "volume"
+		"iconName": "volume",
+		"lines": [
+			{"type": "input", "label": "Volume", "key": "WFVolume"}
+		]
 	},
 	"skipback":
 	{
@@ -1394,7 +1397,11 @@
 	"setitemname":
 	{
 		"prettyName": "Set Name",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "input", "label": "Name", "key": "WFName"}
+			{"type": "switch", "label": "Don't Include File Extension", "default": false, "key": "WFDontIncludeFileExtension"}
+		]
 	},
 	"viewresult":
 	{
@@ -1542,37 +1549,62 @@
 	"bluetooth.set":
 	{
 		"prettyName": "Set Bluetooth",
-		"iconName": "bluetooth"
+		"iconName": "bluetooth",
+		"lines": [
+			{"type": "switch", "label": "Bluetooth", "key": "OnValue", "default": true}
+		]
 	},
 	"setbrightness":
 	{
 		"prettyName": "Set Brightness",
-		"iconName": "brightness"
+		"iconName": "brightness",
+		"lines": [
+			{"type": "input", "label": "Brightness", "key": "WFBrightness"}
+		]
 	},
 	"cellulardata.set":
 	{
 		"prettyName": "Set Mobile Data",
-		"iconName": "data"
+		"iconName": "data",
+		"lines": [
+			{"type": "switch", "label": "Mobile Data", "key": "OnValue", "default": true}
+		]
 	},
 	"dnd.set":
 	{
 		"prettyName": "Set Do Not Disturb",
-		"iconName": "disturb"
+		"iconName": "disturb",
+		"lines": [
+			{"type": "switch", "label": "Do Not Disturb", "key": "Enabled", "default": false}
+		]
 	},
 	"flashlight":
 	{
 		"prettyName": "Set Torch",
-		"iconName": "torch"
+		"iconName": "torch",
+		"lines": [
+			{"type": "choice", "label": "Torch", "key": "WFFlashlightSetting", "default": "On", "choices": [
+				"Off",
+				"On",
+				"Toggle"
+			]}
+		]
 	},
 	"lowpowermode.set":
 	{
 		"prettyName": "Set Low Power Mode",
-		"iconName": "battery"
+		"iconName": "battery",
+		"lines": [
+			{"type": "switch", "label": "Low Power Mode", "key": "OnValue", "default": true}
+		]
 	},
 	"wifi.set":
 	{
 		"prettyName": "Set Wi-Fi",
-		"iconName": "network"
+		"iconName": "network",
+		"lines": [
+			{"type": "switch", "label": "Wi-Fi", "default": true, "key": "OnValue"}
+		]
 	},
 	"dictionary":
 	{
@@ -1592,53 +1624,139 @@
 		"prettyName": "Get Dictionary Value",
 		"iconName": "wheel",
 		"lines" : [
+			{"type": "choice", "label" : "Get", "key": "WFGetDictionaryValueType", "choices": [
+				"Value",
+				"All Keys",
+				"All Values"
+			]},
 			{"type": "input", "label" : "Key", "key": "WFDictionaryKey"}
 		]
 	},
 	"setvalueforkey":
 	{
 		"prettyName": "Set Dictionary Value",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "input", "label" : "Key", "key": "WFDictionaryKey"}
+			{"type": "input", "label" : "Value", "key": "WFDictionaryValue"}
+		]
 	},
 	"base64encode":
 	{
 		"prettyName": "Base64 Encode",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "choice", "label" : "Mode", "key": "WFEncodeMode", "default": "Encode", "choices": [
+				"Encode",
+				"Decode"
+			]},
+			{"type": "choice", "label" : "Line Breaks", "key": "WFBase64LineBreakMode", "default": "Every 64 Characters", "choices": [
+				"None",
+				"Every 64 Characters",
+				"Every 76 Characters",
+				"Ask When Run"
+			]}
+		]
 	},
 	"hash":
 	{
 		"prettyName": "Generate Hash",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "choice", "label" : "Type", "key": "WFHashType", "default": "MD5", "choices": [
+				"MD5",
+				"SHA1",
+				"SHA256",
+				"SHA512",
+				"Ask When Run"
+			]}
+		]
 	},
 	"choosefromlist":
 	{
 		"prettyName": "Choose from List",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "input", "label": "Prompt", "key": "WFChooseFromListActionPrompt"}
+			{"type": "switch", "label": "Select Multiple", "default": false, "key": "WFChooseFromListActionPrompt"},
+			{"type": "switch", "label": "Select All Initially", "default": false, "key": "WFChooseFromListActionPrompt"}
+		]
 	},
 	"getitemfromlist":
 	{
 		"prettyName": "Get Item from List",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "choice", "label" : "Get", "key": "WFItemSpecifier", "default": "First Item", "choices": [
+				"First Item",
+				"Last Item",
+				"Random Item",
+				"Item At Index",
+				"Items In Range",
+				"Ask When Run"
+			]},
+			{"type": "input", "label": "Get Items From Index", "key": ""},
+			{"type": "input", "label": "To Index", "key": ""}
+		]
 	},
 	"list":
 	{
 		"prettyName": "List",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "menu"}
+		]
 	},
 	"math":
 	{
 		"prettyName": "Calculate",
-		"iconName": "calculator"
+		"iconName": "calculator",
+		"lines": [
+			{"type": "choice", "label": "Operation", "default": "+", "key": "WFMathOperation", "choices": [
+				"+",
+				"-",
+				"*",
+				"/"
+			]},
+			{"type": "input", "label": "Operand", "key": "WFMathOperand"},
+			{"type": "choice", "label": "Scientific Operation", "default": "Modulus", "key": "WFScientificMathOperation", "choices": [
+				"Modulus",
+				"x^2",
+				"x^3",
+				"x^y",
+				"e^x",
+				"10^x",
+				"In(x)",
+				"log(x)",
+				"square x"
+			]},
+			{"type": "input", "label": "Operand", "key": "WFScientificMathOperand"}
+		]
 	},
 	"statistics":
 	{
 		"prettyName": "Calculate Statistics",
-		"iconName": "calculator"
+		"iconName": "calculator",
+		"lines": [
+			{"type": "choice", "label": "Operation", "default": "Average", "key": "WFStatisticsOperation", "choices": [
+				"Average",
+				"Minimum",
+				"Maximum",
+				"Sum",
+				"Median",
+				"Mode",
+				"Range",
+				"Standard Deviation"
+			]}
+		]
 	},
 	"format.number":
 	{
 		"prettyName": "Format Number",
-		"iconName": "calculator"
+		"iconName": "calculator",
+		"lines": [
+			{"type": "input", "label": "Decimal Places", "key": "WFNumberFormatDecimalPlaces"}
+		]
 	},
 	"number":
 	{
@@ -1651,7 +1769,11 @@
 	"number.random":
 	{
 		"prettyName": "Random Number",
-		"iconName": "calculator"
+		"iconName": "calculator",
+		"lines": [
+			{"type": "input", "label": "Minimum", "key": "WFRandomNumberMinimum"},
+			{"type": "input", "label": "Maximum", "key": "WFRandomNumberMaximum"}
+		]
 	},
 	"round":
 	{
