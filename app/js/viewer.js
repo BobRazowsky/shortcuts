@@ -184,6 +184,7 @@ function createNode(action) {
 	}
 	if(isInFlow) {
 		node.classList.add('flow');
+		nodeContent.classList.add('flow');
 	}
 
 	if(typeof flowMode !== "undefined") {
