@@ -207,7 +207,11 @@ function createFlowNode(action) {
 	var nodeLabelTxt = "";
 	if(actionParams.WFControlFlowMode == 1) {
 		isInFlow = true;
-		nodeLabelTxt = actionParams.WFMenuItemTitle;
+		if(actionParams.WFMenuItemTitle) {
+			nodeLabelTxt = actionParams.WFMenuItemTitle;
+		} else {
+			nodeLabelTxt = nodeDictionary[nodeUglyTitle].nodes[actionParams.WFControlFlowMode];
+		}
 	} else if(actionParams.WFControlFlowMode == 2) {
 		isInFlow = false;
 		nodeLabelTxt = nodeDictionary[nodeUglyTitle].nodes[actionParams.WFControlFlowMode];

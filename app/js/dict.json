@@ -1342,7 +1342,20 @@
 	"conditional":
 	{
 		"prettyName": "If",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "choice", "label": "Input", "key": "WFCondition", "choices": [
+				"Equals",
+				"Contains",
+				"Is Greater Than",
+				"Is Lesser Than"
+			]},
+			{"type": "input", "label": "Value", "key": "WFConditionalActionString"}
+		],
+		"nodes": {
+			"1" : "Otherwise",
+			"2" : "End If"
+		}
 	},
 	"repeat.count":
 	{
@@ -1358,7 +1371,10 @@
 	"repeat.each":
 	{
 		"prettyName": "Repeat with Each",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"nodes" : {
+			"2" : "End Repeat"
+		}
 	},
 	"delay":
 	{
