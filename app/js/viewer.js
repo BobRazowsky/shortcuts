@@ -93,6 +93,8 @@ function createNode(action) {
 		if(flowMode == 1 || flowMode == 2) {
 			createFlowNode(action);
 			return;
+		} else {
+			isInFlow = true;
 		}
 	}
 
@@ -102,9 +104,6 @@ function createNode(action) {
 		return;
 	}
 	var lines = nodeDictionary[nodeUglyTitle].lines;
-
-	var altNode = false;
-	var altNodeTitle = "";
 
 	if(lines) {
 		for(var k = 0; k < lines.length; k++) {
