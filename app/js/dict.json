@@ -12,7 +12,37 @@
 		"prettyName": "Get Details of App Store App",
 		"iconName": "properties.appstore",
 		"lines": [
-			{"type": "choice", "label": "Get", "key": " ", "choices": ["Artist", "Price", "Currency Code", "Formatted Price", "Release Date", "Category", "Description", "Rating", "No. of Ratings", "Rating(This Version)", "No. of Ratings(This Version)", "Version", "Last Updated", "Release Notes", "Content Rating", "Minimum OS Version", "Is Universal", "Supports Game Center", "Supported Devices", "Supported Languages", "Screenshot URLs", "iPad Screenshot URLs", "Download Size", "Store ID", "Store URL", "Artwork", "Artwork URL", "Name"]}
+			{"type": "choice", "label": "Get", "key": " ", "choices": 
+			[
+				"Artist",
+				"Price",
+				"Currency Code",
+				"Formatted Price",
+				"Release Date",
+				"Category",
+				"Description",
+				"Rating",
+				"No. of Ratings",
+				"Rating(This Version)",
+				"No. of Ratings(This Version)",
+				"Version",
+				"Last Updated",
+				"Release Notes",
+				"Content Rating",
+				"Minimum OS Version",
+				"Is Universal",
+				"Supports Game Center",
+				"Supported Devices",
+				"Supported Languages",
+				"Screenshot URLs",
+				"iPad Screenshot URLs",
+				"Download Size",
+				"Store ID",
+				"Store URL",
+				"Artwork",
+				"Artwork URL",
+				"Name"
+			]}
 		]
 	},
 	"searchappstore":
@@ -22,7 +52,12 @@
 		"lines": [
 			{"type": "input", "label": "Search", "key": " ", "default": " "},
 			{"type": "input", "label": "Search By", "key": " ", "default": "All"},
-			{"type": "choice", "label": "Results", "key": " ", "choices": ["iPhone", "iPad", "Mac"]},
+			{"type": "choice", "label": "Results", "key": " ", "choices":
+			[
+				"iPhone",
+				"iPad",
+				"Mac"
+			]},
 			{"type": "input", "label": "Country", "key": " ", "default": "France"},
 			{"type": "minusplus", "label": "25 Items", "key": " ", "default": " "}
 		]
@@ -36,7 +71,19 @@
 			{"type": "input", "label": "Location", "key": " ", "default": " "},
 			{"type": "input", "label": "Calendar", "key": " ", "default": " "},
 			{"type": "input", "label": "Date", "key": " ", "default": " "},
-			{"type": "choice", "label": "Alert", "key": " ", "choices": ["At time of event", "5 minutes before", "15 minutes before", "30 minutes before", "1 hour before", "2 hour before", "1 day before", "2 days before", "1 week before", "Custom"]}
+			{"type": "choice", "label": "Alert", "key": " ", "choices":
+			[
+				"At time of event",
+				"5 minutes before",
+				"15 minutes before",
+				"30 minutes before",
+				"1 hour before",
+				"2 hour before",
+				"1 day before",
+				"2 days before",
+				"1 week before",
+				"Custom"
+			]}
 		]
 	},
 	"filter.eventattendees":
@@ -109,7 +156,11 @@
 		"prettyName": "Date",
 		"iconName": "date",
 		"lines": [
-			{"type": "choice", "label": "Use", "key": " ", "default": "Current Date", "choices": ["Current Date", "Specified Date"]},
+			{"type": "choice", "label": "Use", "key": " ", "default": "Current Date", "choices":
+			[
+				"Current Date",
+				"Specified Date"
+			]},
 			{"type": "input", "label": "Date", "key": " ", "default": " ", "condition": "Current Date"}
 		]
 	},
@@ -959,7 +1010,15 @@
 		"prettyName": "Change Case",
 		"iconName": "text",
 		"lines" : [
-			{"type": "choice", "label": "Case", "key": "WFCaseType", "choices": ["UPPERCASE", "lowercase", "Capitalize Every Word", "Capitalize with Title Case", "Capitalize with sentence case.", "cApItAlIsE wItH aLtErNaTiNg CaSe"]}
+			{"type": "choice", "label": "Case", "key": "WFCaseType", "choices":
+			[
+				"UPPERCASE",
+				"lowercase",
+				"Capitalize Every Word",
+				"Capitalize with Title Case",
+				"Capitalize with sentence case.",
+				"cApItAlIsE wItH aLtErNaTiNg CaSe"
+			]}
 		]
 	},
 	"text.combine":
@@ -967,7 +1026,12 @@
 		"prettyName": "Combine Text",
 		"iconName": "text",
 		"lines" : [
-			{"type": "choice", "label": "Separator", "key": "WFTextSeparator", "choices": ["New Lines", "Spaces", "Custom"]}
+			{"type": "choice", "label": "Separator", "key": "WFTextSeparator", "choices":
+			[
+				"New Lines",
+				"Spaces",
+				"Custom"
+			]}
 		]
 	},
 	"correctspelling":
@@ -980,7 +1044,11 @@
 		"prettyName": "Get Group from Matched Text",
 		"iconName": "text",
 		"lines" : [
-			{"type": "choice", "label": "Get", "key": "WFGetGroupType", "choices": ["Group At Index", "All Groups"]},
+			{"type": "choice", "label": "Get", "key": "WFGetGroupType", "choices":
+			[
+				"Group At Index",
+				"All Groups"
+			]},
 			{"type": "input", "label": "Group Index", "key": "WFGroupIndex", "default": "1", "condition": "Group At Index"}
 		]
 	},
@@ -1009,7 +1077,13 @@
 		"prettyName": "Split Text",
 		"iconName": "text",
 		"lines" : [
-			{"type": "choice", "label": "Separator", "key": "WFTextSeparator", "choices": ["New Lines", "Spaces", "Every Character", "Custom"]}
+			{"type": "choice", "label": "Separator", "key": "WFTextSeparator", "choices":
+			[
+				"New Lines",
+				"Spaces",
+				"Every Character",
+				"Custom"
+			]}
 		]
 	},
 	"com.guidedways.2Do.add":
@@ -1290,7 +1364,17 @@
 	"count":
 	{
 		"prettyName": "Count",
-		"iconName": "calculator"
+		"iconName": "calculator",
+		"lines": [
+			{"type": "choice", "label": "Count", "key": "WFCountType", "default": "Items", "choices": [
+				"Items",
+				"Characters",
+				"Words",
+				"Sentences",
+				"Lines",
+				"Ask When Run"
+			]}
+		]
 	},
 	"getitemname":
 	{
@@ -1344,7 +1428,7 @@
 		"prettyName": "If",
 		"iconName": "wheel",
 		"lines": [
-			{"type": "choice", "label": "Input", "key": "WFCondition", "choices": [
+			{"type": "choice", "label": "Input", "key": "WFCondition", "default": "Contains", "choices": [
 				"Equals",
 				"Contains",
 				"Is Greater Than",
@@ -1379,7 +1463,10 @@
 	"delay":
 	{
 		"prettyName": "Wait",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "input", "label": "Seconds", "key": "WFDelayTime"}
+		]
 	},
 	"waittoreturn":
 	{
@@ -1394,22 +1481,63 @@
 	"getipaddress":
 	{
 		"prettyName": "Get Current IP Address",
-		"iconName": "ip"
+		"iconName": "ip",
+		"lines": [
+			{"type": "choice", "label": "Address", "key": "WFIPAddressSourceOption", "choices": [
+				"External",
+				"Local"
+			]},
+			{"type": "choice", "label": "Type", "key": "WFIPAddressTypeOption", "choices": [
+				"IPv4",
+				"IPv6"
+			]}
+		]
 	},
 	"getdevicedetails":
 	{
 		"prettyName": "Get Device Details",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "choice", "label": "Get", "key": "WFDeviceDetail", "default": "Device Name", "choices": [
+				"Device Name",
+				"Device Model",
+				"System Version",
+				"Screen Width",
+				"Screen Height",
+				"Current Volume",
+				"Current Brightness",
+				"Ask When Run"
+			]}
+		]
 	},
 	"getwifi":
 	{
 		"prettyName": "Get Network Details",
-		"iconName": "network"
+		"iconName": "network",
+		"lines": [
+			{"type": "choice", "label": "Network", "key": "WFNetworkDetailsNetwork", "default": "Wi-Fi", "choices": [
+				"Wi-Fi",
+				"Mobile Data"
+			]},
+			{"type": "choice", "label": "Get", "key": "WFWiFiDetail", "default": "Network Name", "choices": [
+				"Network Name",
+				"BSSID"
+			]},
+			{"type": "choice", "label": "Get", "key": "WFCellularDetail", "default": "Carrier Name", "choices": [
+				"Carrier Name",
+				"Radio Technology",
+				"Country Code",
+				"Ask When Run"
+			]}
+		]
 	},
 	"airplanemode.set":
 	{
 		"prettyName": "Set Airplane Mode",
-		"iconName": "airplane"
+		"iconName": "airplane",
+		"lines": [
+			{"type": "switch", "label": "Airplane Mode", "key": "OnValue", "default": true}
+		]
 	},
 	"bluetooth.set":
 	{

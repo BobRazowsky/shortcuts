@@ -438,6 +438,9 @@ function createChoiceInput(actionParams, line) {
 
 	var txt = null;
 	var value = actionParams[line.key];
+	if(!value) {
+		value = line.default;
+	}
 	var choices = line.choices;
 
 	var n = document.createElement('p');
