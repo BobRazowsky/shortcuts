@@ -669,7 +669,7 @@
 		"prettyName": "Set Volume",
 		"iconName": "volume",
 		"lines": [
-			{"type": "input", "label": "Volume", "key": "WFVolume"}
+			{"type": "range", "label": "Volume", "key": "WFVolume", "default": 0.5}
 		]
 	},
 	"skipback":
