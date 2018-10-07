@@ -42,6 +42,7 @@ function init() {
 		for(var i = 0; i < actions.length; i++) {
 			createNode(actions[i], i);
 		}
+		displayQuestions(questions);
 	}, 500);
 
 	var url_string = window.location.href;
@@ -50,8 +51,6 @@ function init() {
 	var value = name.replace(".shortcut", "");
 
 	document.getElementById('shortcutName').innerHTML = value;
-
-	displayQuestions(questions);
 }
 
 function downloadShortcutJSON() {
