@@ -89,9 +89,10 @@ function createNode(action) {
 	var actionParams = action.WFWorkflowActionParameters;
 	var flowMode = actionParams.WFControlFlowMode;
 
-	console.log(flowMode);
+	
 
 	if(flowMode) {
+		console.log(flowMode);
 		if(flowMode == 1 || flowMode == 2) {
 			createFlowNode(action);
 			return;
