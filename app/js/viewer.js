@@ -115,6 +115,16 @@ function displayQuestions(questions) {
 		nodeTitle.classList.add('nodeTitle');
 		nodeTitle.innerHTML = nodeTitleTxt;
 		nodeTop.appendChild(nodeTitle);
+
+		var nodeContent = document.createElement('div');
+		nodeContent.classList.add('nodeContent');
+		var quest = document.createElement('p');
+		quest.innerHTML = questions[i].Text;
+		nodeContent.appendChild(quest);
+		var answ = document.createElement('p');
+		answ.innerHTML = questions[i].DefaultValue;
+		nodeContent.appendChild(answ);
+		node.appendChild(nodeContent);
 	}
 }
 
