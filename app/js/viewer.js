@@ -32,6 +32,10 @@ function init() {
 	nodeDictionary = getDictionary();
 
 	var actions = shortcut.WFWorkflowActions;
+	var questions = shortcut.WFWorkflowImportQuestions;
+
+	displayQuestions(questions);
+
 	var color = colors[shortcut.WFWorkflowIcon.WFWorkflowIconStartColor];
 
 	document.getElementById('top').style.backgroundImage = "linear-gradient(-90deg,"+ LightenDarkenColor(color, -20) +", "+ color +")";
@@ -74,6 +78,10 @@ function getDictionary() {
 	var response = JSON.parse(xmlHttp.responseText);
 	
 	return response;
+}
+
+function displayQuestions(questions) {
+
 }
 
 function createNode(action) {
@@ -127,6 +135,9 @@ function createNode(action) {
 					content.push(createTable(actionParams, lines[k]));
 					break;
 				case 'menu':
+					content.push(createMenu(actionParams, lines[k]));
+					break;
+				case 'list':
 					content.push(createList(actionParams, lines[k]));
 					break;
 
@@ -319,9 +330,19 @@ function createTableLine(key, value) {
 	return domLine;
 }
 
-function createList(actionParams, line) {
+function createMenu(actionParams, line) {
 	var lines = [];
 	var keys = actionParams.WFMenuItems;
+	for(var i = 0; i < keys.length; i++) {
+		lines.push(createListLine(keys[i]));
+	}
+
+	return lines;
+}
+
+function createList(actionParams, line) {
+	var lines = [];
+	var keys = actionParams.WFItems;
 	for(var i = 0; i < keys.length; i++) {
 		lines.push(createListLine(keys[i]));
 	}

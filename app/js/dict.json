@@ -1704,7 +1704,7 @@
 		"prettyName": "List",
 		"iconName": "wheel",
 		"lines": [
-			{"type": "menu"}
+			{"type": "list"}
 		]
 	},
 	"math":
