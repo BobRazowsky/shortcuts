@@ -117,7 +117,7 @@ function displayQuestions(questions) {
 	}
 }
 
-function createNode(action) {
+function createNode(action, index) {
 	if(!action) {
 		return;
 	}
@@ -135,7 +135,7 @@ function createNode(action) {
 	if(typeof flowMode !== "undefined") {
 		console.log(flowMode);
 		if(flowMode == 1 || flowMode == 2) {
-			createFlowNode(action, i);
+			createFlowNode(action, index);
 			return;
 		}
 	}
@@ -181,7 +181,7 @@ function createNode(action) {
 	// Add node
 	var node = document.createElement('div');
 	node.classList.add('node');
-	node.id = "node" + i;
+	node.id = "node" + index;
 	container.appendChild(node);
 
 	//Add node header
@@ -240,7 +240,7 @@ function createNode(action) {
 	}
 }
 
-function createFlowNode(action) {
+function createFlowNode(action, index) {
 
 	var actionParams = action.WFWorkflowActionParameters;
 
@@ -265,7 +265,7 @@ function createFlowNode(action) {
 
 	var node = document.createElement('div');
 	node.classList.add('node');
-	node.id = "node" + i;
+	node.id = "node" + index;
 	container.appendChild(node);
 
 	var nodeTop = document.createElement('div');
