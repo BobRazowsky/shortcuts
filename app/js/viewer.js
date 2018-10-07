@@ -79,21 +79,12 @@ function createNode(action) {
 		return;
 	}
 
-	var noTopNode = false;
-
 	var container = document.getElementById('container');
 
 	var keys = Object.keys(action.WFWorkflowActionParameters);
 	var content = [];
 
 	var actionParams = action.WFWorkflowActionParameters;
-	var altNode = false;
-
-	if(actionParams.WFControlFlowMode) {
-		if(actionParams.WFControlFlowMode !== 0) {
-			altNode = true;
-		}
-	}
 
 	var nodeUglyTitle = action.WFWorkflowActionIdentifier.replace("is.workflow.actions.", "");
 	if(!nodeDictionary[nodeUglyTitle]) {
@@ -101,7 +92,10 @@ function createNode(action) {
 		return;
 	}
 	var lines = nodeDictionary[nodeUglyTitle].lines;
-	
+
+	var altNode = false;
+	var altNodeTitle = "";
+
 	if(lines) {
 		for(var k = 0; k < lines.length; k++) {
 			var type = lines[k].type;
@@ -128,11 +122,11 @@ function createNode(action) {
 					if(actionParams.WFControlFlowMode === 0) {
 						content.push(createList(actionParams, lines[k]));
 					} else if(actionParams.WFControlFlowMode == 1) {
-						noTopNode = true;
-						content.push(createFlowItem(actionParams.WFMenuItemTitle));
+						altNode = true;
+						altNodeTitle = actionParams.WFMenuItemTitle;
 					} else if(actionParams.WFControlFlowMode == 2) {
-						noTopNode = true;
-						content.push(createFlowItem("End Menu"));
+						altNode = true;
+						altNodeTitle = "End Menu";
 					}
 					
 					break;
@@ -146,7 +140,7 @@ function createNode(action) {
 	node.classList.add('node');
 	container.appendChild(node);
 
-	if(!noTopNode) {
+	if(!altNode) {
 		//Add node header
 		var nodeTop = document.createElement('div');
 		nodeTop.classList.add('nodeTop');
@@ -172,25 +166,36 @@ function createNode(action) {
 		}
 		nodeTitle.innerHTML = title;
 		nodeTop.appendChild(nodeTitle);
+
+		if(content.length > 0) {
+			var nodeContent = document.createElement('div');
+			nodeContent.classList.add('nodeContent');
+			for(var j = 0; j < content.length; j++) {
+				if(content[j]){
+					for(var m = 0; m < content[j].length; m++) {
+
+						nodeContent.appendChild(content[j][m]);
+					}
+				}
+				
+			}
+			node.appendChild(nodeContent);
+		} else {
+			node.classList.add('small');
+			nodeTop.classList.add('small');
+		}	
+	} else {
+		var nodeTop = document.createElement('div');
+		nodeTop.classList.add('nodeTop');
+		node.appendChild(nodeTop);
+
+		var nodeTitle = document.createElement('p');
+		nodeTitle.classList.add('nodeTitle');
+		nodeTitle.innerHTML = altNodeTitle;
+		nodeTop.appendChild(nodeTitle);
 	}
 
-	if(content.length > 0) {
-		var nodeContent = document.createElement('div');
-		nodeContent.classList.add('nodeContent');
-		for(var j = 0; j < content.length; j++) {
-			if(content[j]){
-				for(var m = 0; m < content[j].length; m++) {
-
-					nodeContent.appendChild(content[j][m]);
-				}
-			}
-			
-		}
-		node.appendChild(nodeContent);
-	} else {
-		node.classList.add('small');
-		nodeTop.classList.add('small');
-	}	
+	
 }
 
 function getVariablesFromAttachments(attach) {
