@@ -1515,7 +1515,10 @@
 	"number":
 	{
 		"prettyName": "Number",
-		"iconName": "calculator"
+		"iconName": "calculator",
+		"lines" : [
+			{"type" : "input", "label" : "Number", "key": "WFNumberActionNumber"}
+		]
 	},
 	"number.random":
 	{
