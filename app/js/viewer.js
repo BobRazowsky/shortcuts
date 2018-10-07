@@ -87,6 +87,14 @@ function createNode(action) {
 	var content = [];
 
 	var actionParams = action.WFWorkflowActionParameters;
+	var flowMode = actionParams.WFControlFlowMode;
+
+	if(flowMode) {
+		if(flowMode == 1 || flowMode == 2) {
+			createFlowNode(action);
+			return;
+		}
+	}
 
 	var nodeUglyTitle = action.WFWorkflowActionIdentifier.replace("is.workflow.actions.", "");
 	if(!nodeDictionary[nodeUglyTitle]) {
@@ -121,18 +129,7 @@ function createNode(action) {
 					content.push(createTable(actionParams, lines[k]));
 					break;
 				case 'menu':
-					if(actionParams.WFControlFlowMode === 0) {
-						content.push(createList(actionParams, lines[k]));
-					} else if(actionParams.WFControlFlowMode == 1) {
-						altNode = true;
-						isInFlow = true;
-						altNodeTitle = actionParams.WFMenuItemTitle;
-					} else if(actionParams.WFControlFlowMode == 2) {
-						altNode = true;
-						isInFlow = false;
-						altNodeTitle = "End Menu";
-					}
-					
+					content.push(createList(actionParams, lines[k]));
 					break;
 
 			}
@@ -144,69 +141,90 @@ function createNode(action) {
 	node.classList.add('node');
 	container.appendChild(node);
 
-	if(!altNode) {
-		//Add node header
-		var nodeTop = document.createElement('div');
-		nodeTop.classList.add('nodeTop');
-		node.appendChild(nodeTop);
+	//Add node header
+	var nodeTop = document.createElement('div');
+	nodeTop.classList.add('nodeTop');
+	node.appendChild(nodeTop);
 
-		//Add header icon
-		if(nodeDictionary[nodeUglyTitle].iconName) {
-			var nodeIcon = document.createElement('img');
-			nodeIcon.src = './images/icons/' + nodeDictionary[nodeUglyTitle].iconName + '.png';
-			nodeIcon.alt = nodeUglyTitle;
-			nodeIcon.classList.add('icon');
-			nodeIcon.width = 32;
-			nodeIcon.height = 32;
-			nodeTop.appendChild(nodeIcon);
-		}
+	//Add header icon
+	if(nodeDictionary[nodeUglyTitle].iconName) {
+		var nodeIcon = document.createElement('img');
+		nodeIcon.src = './images/icons/' + nodeDictionary[nodeUglyTitle].iconName + '.png';
+		nodeIcon.alt = nodeUglyTitle;
+		nodeIcon.classList.add('icon');
+		nodeIcon.width = 32;
+		nodeIcon.height = 32;
+		nodeTop.appendChild(nodeIcon);
+	}
 
-		//Add title
-		var nodeTitle = document.createElement('p');
-		nodeTitle.classList.add('nodeTitle');
-		var title = nodeDictionary[nodeUglyTitle].prettyName;
-		if(!title){
-			title = nodeUglyTitle;
-		}
-		nodeTitle.innerHTML = title;
-		nodeTop.appendChild(nodeTitle);
+	//Add title
+	var nodeTitle = document.createElement('p');
+	nodeTitle.classList.add('nodeTitle');
+	var title = nodeDictionary[nodeUglyTitle].prettyName;
+	if(!title){
+		title = nodeUglyTitle;
+	}
+	nodeTitle.innerHTML = title;
+	nodeTop.appendChild(nodeTitle);
 
-		if(content.length > 0) {
-			var nodeContent = document.createElement('div');
-			nodeContent.classList.add('nodeContent');
-			for(var j = 0; j < content.length; j++) {
-				if(content[j]){
-					for(var m = 0; m < content[j].length; m++) {
+	if(content.length > 0) {
+		var nodeContent = document.createElement('div');
+		nodeContent.classList.add('nodeContent');
+		for(var j = 0; j < content.length; j++) {
+			if(content[j]){
+				for(var m = 0; m < content[j].length; m++) {
 
-						nodeContent.appendChild(content[j][m]);
-					}
+					nodeContent.appendChild(content[j][m]);
 				}
-				
 			}
-			node.appendChild(nodeContent);
-		} else {
-			node.classList.add('small');
-			nodeTop.classList.add('small');
+			
 		}
-		if(isInFlow) {
-			node.classList.add('flow');
-		}
+		node.appendChild(nodeContent);
 	} else {
-		var nodeTop = document.createElement('div');
-		nodeTop.classList.add('nodeTop');
-		node.appendChild(nodeTop);
-
-		var nodeTitle = document.createElement('p');
-		nodeTitle.classList.add('nodeTitle');
-		nodeTitle.innerHTML = altNodeTitle;
-		nodeTop.appendChild(nodeTitle);
-
 		node.classList.add('small');
 		nodeTop.classList.add('small');
-
+	}
+	if(isInFlow) {
+		node.classList.add('flow');
 	}
 
 	
+}
+
+function createFlowNode(action) {
+
+	var actionParams = action.WFWorkflowActionParameters;
+
+	var nodeUglyTitle = action.WFWorkflowActionIdentifier.replace("is.workflow.actions.", "");
+	if(!nodeDictionary[nodeUglyTitle]) {
+		console.log('missing key ' + nodeUglyTitle + ' in dictionary');
+		return;
+	}
+	var lines = nodeDictionary[nodeUglyTitle].lines;
+	var nodeLabelTxt = "";
+	if(action.WFControlFlowMode == 1) {
+		isInFlow = true;
+		nodeLabelTxt = actionParams.WFMenuItemTitle;
+	} else if(action.WFControlFlowMode == 2) {
+		isInFlow = false;
+		nodeLabelTxt = nodeDictionary[nodeUglyTitle].nodes[action.WFControlFlowMode];
+	}
+
+	var node = document.createElement('div');
+	node.classList.add('node');
+	container.appendChild(node);
+
+	var nodeTop = document.createElement('div');
+	nodeTop.classList.add('nodeTop');
+	node.appendChild(nodeTop);
+
+	var nodeTitle = document.createElement('p');
+	nodeTitle.classList.add('nodeTitle');
+	nodeTitle.innerHTML = nodeLabelTxt;
+	nodeTop.appendChild(nodeTitle);
+
+	node.classList.add('small');
+	nodeTop.classList.add('small');
 }
 
 function getVariablesFromAttachments(attach) {

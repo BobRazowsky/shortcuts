@@ -1323,7 +1323,7 @@
 		"iconName": "wheel",
 		"lines" : [
 			{"type": "input", "label": "Prompt", "key":"WFMenuPrompt"},
-			{"type": "menu", "endNodeLabel": "End Menu"}
+			{"type": "menu"}
 		]
 	},
 	"handoff":
@@ -1349,7 +1349,10 @@
 	"repeat.each":
 	{
 		"prettyName": "Repeat with Each",
-		"iconName": "wheel"
+		"iconName": "wheel",
+		"lines": [
+			{"type": "input", "label": "Repeat Time", "key": ""}
+		]
 	},
 	"delay":
 	{
