@@ -114,6 +114,7 @@ function displayQuestions(questions) {
 		nodeTitle.classList.add('nodeTitle');
 		nodeTitle.innerHTML = nodeTitleTxt;
 		nodeTop.appendChild(nodeTitle);
+	}
 }
 
 function createNode(action) {
