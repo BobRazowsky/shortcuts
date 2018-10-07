@@ -1347,11 +1347,6 @@
 	"repeat.count":
 	{
 		"prettyName": "Repeat",
-		"iconName": "wheel"
-	},
-	"repeat.each":
-	{
-		"prettyName": "Repeat with Each",
 		"iconName": "wheel",
 		"lines": [
 			{"type": "input", "label": "Repeat Time", "key": ""}
@@ -1359,6 +1354,11 @@
 		"nodes" : {
 			"2" : "End Repeat"
 		}
+	},
+	"repeat.each":
+	{
+		"prettyName": "Repeat with Each",
+		"iconName": "wheel"
 	},
 	"delay":
 	{
