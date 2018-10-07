@@ -32,7 +32,7 @@ function init() {
 	nodeDictionary = getDictionary();
 
 	var actions = shortcut.WFWorkflowActions;
-	//var questions = shortcut.WFWorkflowImportQuestions;
+	var questions = shortcut.WFWorkflowImportQuestions;
 
 	var color = colors[shortcut.WFWorkflowIcon.WFWorkflowIconStartColor];
 
