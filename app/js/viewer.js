@@ -202,12 +202,12 @@ function createFlowNode(action) {
 	}
 	var lines = nodeDictionary[nodeUglyTitle].lines;
 	var nodeLabelTxt = "";
-	if(action.WFControlFlowMode == 1) {
+	if(actionParams.WFControlFlowMode == 1) {
 		isInFlow = true;
 		nodeLabelTxt = actionParams.WFMenuItemTitle;
-	} else if(action.WFControlFlowMode == 2) {
+	} else if(actionParams.WFControlFlowMode == 2) {
 		isInFlow = false;
-		nodeLabelTxt = nodeDictionary[nodeUglyTitle].nodes[action.WFControlFlowMode];
+		nodeLabelTxt = nodeDictionary[nodeUglyTitle].nodes[actionParams.WFControlFlowMode];
 	}
 
 	var node = document.createElement('div');
