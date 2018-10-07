@@ -192,6 +192,9 @@ function createNode(action, index) {
 				case 'list':
 					content.push(createList(actionParams, lines[k]));
 					break;
+				case 'range':
+					content.push(createRange(actionParams, lines[k]));
+					break;
 
 			}
 		}
@@ -495,6 +498,40 @@ function createLabel(actionParams, line) {
 	n.classList.add('left');
 	domLine.appendChild(n);
 	var v = document.createElement('p');
+	v.innerHTML = txt;
+	v.classList.add('right');
+	domLine.appendChild(v);
+
+	result.push(domLine);
+
+	return result;
+}
+
+function createRange(actionParams, line) {
+
+	var result = [];
+
+	var domLine = document.createElement('div');
+	domLine.classList.add('line');
+
+	var txt = null;
+	var value = actionParams[line.key];
+
+	if(!value) {
+		txt = line.default;
+		value = line.default;
+	}
+
+	var n = document.createElement('p');
+	n.innerHTML = line.label;
+	n.classList.add('left');
+	domLine.appendChild(n);
+	var v = document.createElement('input');
+	v.type = "range";
+	v.min = 0;
+	v.max = 1;
+	v.step = 0.05;
+	v.value = value;
 	v.innerHTML = txt;
 	v.classList.add('right');
 	domLine.appendChild(v);

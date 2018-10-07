@@ -1559,7 +1559,7 @@
 		"prettyName": "Set Brightness",
 		"iconName": "brightness",
 		"lines": [
-			{"type": "input", "label": "Brightness", "key": "WFBrightness"}
+			{"type": "range", "label": "Brightness", "key": "WFBrightness", "default": 0.5}
 		]
 	},
 	"cellulardata.set":
