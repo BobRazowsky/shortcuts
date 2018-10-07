@@ -118,12 +118,18 @@ function displayQuestions(questions) {
 
 		var nodeContent = document.createElement('div');
 		nodeContent.classList.add('nodeContent');
+		var domLine1 = document.createElement('div');
+		domLine1.classList.add('line');
 		var quest = document.createElement('p');
 		quest.innerHTML = questions[i].Text;
-		nodeContent.appendChild(quest);
+		domLine1.appendChild(quest);
+		var domLine2 = document.createElement('div');
+		domLine2.classList.add('line');
 		var answ = document.createElement('p');
 		answ.innerHTML = questions[i].DefaultValue;
-		nodeContent.appendChild(answ);
+		domLine2.appendChild(answ);
+		nodeContent.appendChild(domLine1);
+		nodeContent.appendChild(domLine2);
 		node.appendChild(nodeContent);
 	}
 }
