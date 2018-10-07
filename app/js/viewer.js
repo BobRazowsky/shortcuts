@@ -78,6 +78,9 @@ function createNode(action) {
 	if(!action) {
 		return;
 	}
+
+	var noTopNode = false;
+
 	var container = document.getElementById('container');
 
 	var keys = Object.keys(action.WFWorkflowActionParameters);
@@ -112,9 +115,18 @@ function createNode(action) {
 				case 'table':
 					content.push(createTable(actionParams, lines[k]));
 					break;
-				// case 'list':
-				// 	content.push(createList(actionParams, lines[k]));
-				// 	break;
+				case 'menu':
+					if(actionParams.WFControlFlowMode === 0) {
+						content.push(createList(actionParams, lines[k]));
+					} else if(actionParams.WFControlFlowMode == 1) {
+						noTopNode = true;
+						content.push(createFlowItem(actionParams.WFMenuItemTitle));
+					} else if(actionParams.WFControlFlowMode == 1) {
+						noTopNode = true;
+						content.push(createFlowItem("End Menu"));
+					}
+					
+					break;
 
 			}
 		}
@@ -125,31 +137,33 @@ function createNode(action) {
 	node.classList.add('node');
 	container.appendChild(node);
 
-	//Add node header
-	var nodeTop = document.createElement('div');
-	nodeTop.classList.add('nodeTop');
-	node.appendChild(nodeTop);
+	if(!noTopNode) {
+		//Add node header
+		var nodeTop = document.createElement('div');
+		nodeTop.classList.add('nodeTop');
+		node.appendChild(nodeTop);
 
-	//Add header icon
-	if(nodeDictionary[nodeUglyTitle].iconName) {
-		var nodeIcon = document.createElement('img');
-		nodeIcon.src = './images/icons/' + nodeDictionary[nodeUglyTitle].iconName + '.png';
-		nodeIcon.alt = nodeUglyTitle;
-		nodeIcon.classList.add('icon');
-		nodeIcon.width = 32;
-		nodeIcon.height = 32;
-		nodeTop.appendChild(nodeIcon);
-	}
+		//Add header icon
+		if(nodeDictionary[nodeUglyTitle].iconName) {
+			var nodeIcon = document.createElement('img');
+			nodeIcon.src = './images/icons/' + nodeDictionary[nodeUglyTitle].iconName + '.png';
+			nodeIcon.alt = nodeUglyTitle;
+			nodeIcon.classList.add('icon');
+			nodeIcon.width = 32;
+			nodeIcon.height = 32;
+			nodeTop.appendChild(nodeIcon);
+		}
 
-	//Add title
-	var nodeTitle = document.createElement('p');
-	nodeTitle.classList.add('nodeTitle');
-	var title = nodeDictionary[nodeUglyTitle].prettyName;
-	if(!title){
-		title = nodeUglyTitle;
+		//Add title
+		var nodeTitle = document.createElement('p');
+		nodeTitle.classList.add('nodeTitle');
+		var title = nodeDictionary[nodeUglyTitle].prettyName;
+		if(!title){
+			title = nodeUglyTitle;
+		}
+		nodeTitle.innerHTML = title;
+		nodeTop.appendChild(nodeTitle);
 	}
-	nodeTitle.innerHTML = title;
-	nodeTop.appendChild(nodeTitle);
 
 	if(content.length > 0) {
 		var nodeContent = document.createElement('div');
@@ -271,6 +285,19 @@ function createListLine(key) {
 	var n = document.createElement('p');
 	n.innerHTML = key;
 	n.classList.add('left');
+	domLine.appendChild(n);
+
+	return domLine;
+}
+
+function createFlowItem(value) {
+	var domLine = document.createElement('div');
+	domLine.classList.add('line');
+
+	var n = document.createElement('p');
+	n.innerHTML = value;
+	n.classList.add('left');
+	n.classList.add('flow');
 	domLine.appendChild(n);
 
 	return domLine;

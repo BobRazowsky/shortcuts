@@ -1323,7 +1323,7 @@
 		"iconName": "wheel",
 		"lines" : [
 			{"type": "input", "label": "Prompt", "key":"WFMenuPrompt"},
-			{"type": "list"}
+			{"type": "menu"}
 		]
 	},
 	"handoff":
