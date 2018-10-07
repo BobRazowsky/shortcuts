@@ -1399,7 +1399,7 @@
 		"prettyName": "Set Name",
 		"iconName": "wheel",
 		"lines": [
-			{"type": "input", "label": "Name", "key": "WFName"}
+			{"type": "input", "label": "Name", "key": "WFName"},
 			{"type": "switch", "label": "Don't Include File Extension", "default": false, "key": "WFDontIncludeFileExtension"}
 		]
 	},
@@ -1637,7 +1637,7 @@
 		"prettyName": "Set Dictionary Value",
 		"iconName": "wheel",
 		"lines": [
-			{"type": "input", "label" : "Key", "key": "WFDictionaryKey"}
+			{"type": "input", "label" : "Key", "key": "WFDictionaryKey"},
 			{"type": "input", "label" : "Value", "key": "WFDictionaryValue"}
 		]
 	},
@@ -1677,7 +1677,7 @@
 		"prettyName": "Choose from List",
 		"iconName": "wheel",
 		"lines": [
-			{"type": "input", "label": "Prompt", "key": "WFChooseFromListActionPrompt"}
+			{"type": "input", "label": "Prompt", "key": "WFChooseFromListActionPrompt"},
 			{"type": "switch", "label": "Select Multiple", "default": false, "key": "WFChooseFromListActionPrompt"},
 			{"type": "switch", "label": "Select All Initially", "default": false, "key": "WFChooseFromListActionPrompt"}
 		]
